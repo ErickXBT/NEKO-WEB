@@ -1,0 +1,350 @@
+Buat website landing page modern untuk project crypto wallet bernama HOSHI Swap.
+
+Jangan fokus pada styling/theme terlebih dahulu karena akan diganti nanti. Fokus pada struktur, komponen, layout, section, dan responsiveness.
+
+Gunakan:
+
+React + Vite
+TailwindCSS
+Component-based architecture
+Fully responsive
+Smooth scrolling
+Clean semantic HTML
+PROJECT NAME
+
+HOSHI Swap
+
+Tagline:
+
+One Wallet. Every Chain. Everything DeFi.
+
+LOGO
+
+Gunakan logo berikut pada:
+
+Navbar
+Footer
+Mobile Menu
+
+Logo URL:
+
+https://imgur.com/Z4yhoaz
+WEBSITE STRUCTURE
+1. Navbar
+
+Sticky navbar.
+
+Left:
+
+Logo HOSHI Swap
+
+Center:
+
+Features
+Ecosystem
+Prediction Market
+Security
+Roadmap
+
+Right:
+
+Buttons:
+
+Download Wallet
+Launch App
+
+Mobile:
+
+Hamburger menu
+2. Hero Section
+
+Headline:
+
+The Ultimate Multi-Chain Crypto Wallet
+
+Subheadline:
+
+Manage assets across 50+ blockchains, swap instantly,
+participate in prediction markets, earn rewards,
+and stay ahead with market intelligence.
+
+Buttons:
+
+Download Wallet
+Launch App
+
+Hero image placeholder:
+
+Wallet Dashboard Mockup
+
+Stats row:
+
+50+ Chains Supported
+Built-in Swap
+Non-Custodial
+Prediction Market
+3. Features Section
+
+Section title:
+
+Everything You Need in One Wallet
+
+Buat grid cards.
+
+Features:
+
+Multi-Chain Support (50+)
+
+Description:
+
+Support Ethereum, BNB Chain, Solana, Polygon, Arbitrum, Base and many more.
+
+Built-in Swap
+
+Instant token swaps directly inside wallet.
+
+Token Recommendations
+
+AI-powered token discovery and recommendations.
+
+Prediction Market
+
+Powered by Polymarket integration.
+
+Users can:
+
+Browse markets
+Place predictions
+Track positions
+Affiliate Program
+
+Referral rewards for community growth.
+
+Buy/Sell with Fiat
+
+On-ramp and off-ramp support.
+
+Market Analysis & News
+
+Crypto news and market insights directly inside wallet.
+
+Cold Card Hardware Support
+
+Hardware wallet integration.
+
+Non-Custodial
+
+Users always control their private keys.
+
+QR Payments
+
+Send and receive crypto instantly via QR codes.
+
+4. Feature Comparison Section
+
+Create comparison table.
+
+Columns:
+
+Features
+HOSHI Swap
+
+Rows:
+
+Multi-Chain Support (50+)
+Built-in Swap
+Token Recommendations
+Prediction Market
+Affiliate Program
+Buy/Sell with Fiat
+Market Analysis & News
+Cold Card Hardware
+Non-Custodial
+QR Payments
+
+Use check icons for all features.
+
+5. Prediction Market Section
+
+Title:
+
+Predict the Future with Polymarket
+
+Description:
+
+HOSHI Swap integrates Polymarket so users can participate in decentralized prediction markets directly from their wallet.
+
+Feature cards:
+
+Political Markets
+Crypto Markets
+Sports Markets
+Global Events
+
+CTA:
+
+Explore Prediction Markets
+6. Security Section
+
+Title:
+
+Your Assets, Your Control
+
+Security cards:
+
+Non-Custodial
+
+Private keys remain with users.
+
+Hardware Wallet Support
+
+Cold Card integration.
+
+Secure Transactions
+
+Advanced transaction verification.
+
+Multi-Layer Protection
+
+Enhanced wallet security architecture.
+
+7. Ecosystem Section
+
+Cards:
+
+Wallet
+
+Multi-chain asset management.
+
+Swap
+
+Instant cross-chain trading.
+
+Prediction Markets
+
+Powered by Polymarket.
+
+Rewards
+
+Affiliate and referral earnings.
+
+Analytics
+
+Market insights and news.
+
+8. Roadmap Section
+
+Timeline:
+
+Phase 1
+Wallet Launch
+Multi-chain support
+QR payments
+Phase 2
+Built-in Swap
+Fiat On/Off Ramp
+Affiliate System
+Phase 3
+Polymarket Integration
+Market Analysis Hub
+Hardware Wallet Support
+Phase 4
+AI Token Recommendations
+Advanced Trading Features
+Global Expansion
+9. Download Wallet Section
+
+Title:
+
+Get Started with HOSHI Swap
+
+Buttons:
+
+Download for Android
+Download for iOS
+Chrome Extension
+10. FAQ Section
+
+Questions:
+
+Is HOSHI Swap non-custodial?
+
+Yes, users maintain full control of their assets.
+
+Which chains are supported?
+
+50+ major blockchains.
+
+How does Prediction Market work?
+
+Through Polymarket integration.
+
+Can I buy crypto with fiat?
+
+Yes.
+
+Is hardware wallet support available?
+
+Yes, via Cold Card integration.
+
+11. Footer
+
+Logo HOSHI Swap
+
+Columns:
+
+Product
+Wallet
+Swap
+Prediction Market
+Affiliate Program
+Resources
+Documentation
+Blog
+Security
+Community
+X
+Telegram
+Discord
+
+Bottom text:
+
+© 2026 HOSHI Swap. All rights reserved.
+COMPONENT STRUCTURE
+
+Create components:
+
+Navbar.jsx
+Hero.jsx
+Features.jsx
+FeatureComparison.jsx
+PredictionMarket.jsx
+Security.jsx
+Ecosystem.jsx
+Roadmap.jsx
+DownloadWallet.jsx
+FAQ.jsx
+Footer.jsx
+SEO
+
+Add:
+
+Title:
+
+HOSHI Swap | Multi-Chain Crypto Wallet
+
+Description:
+
+HOSHI Swap is a multi-chain crypto wallet with built-in swap, prediction markets, fiat support, affiliate rewards, hardware wallet integration, and market intelligence.
+FUTURE INTEGRATIONS PLACEHOLDERS
+
+Create placeholder hooks/components for:
+
+Polymarket API
+WalletConnect
+CoinGecko API
+News API
+Referral System
+Fiat On-Ramp Provider
+
+Use mock data for now.
