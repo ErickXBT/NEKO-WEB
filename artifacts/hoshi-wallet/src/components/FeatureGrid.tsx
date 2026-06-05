@@ -1,42 +1,70 @@
-import { Shield, Smartphone, Coins, TrendingUp, Users, RefreshCw, BarChart2, Zap, KeyRound, QrCode } from "lucide-react";
-
-const GRID_ITEMS = [
-  { icon: Shield, title: "Non-Custodial", desc: "Users always control their private keys" },
-  { icon: Smartphone, title: "Multi-Chain Support (50+)", desc: "Ethereum, BNB, Solana, Polygon, Arbitrum, Base & more" },
-  { icon: RefreshCw, title: "Built-in Swap", desc: "Instant token swaps directly inside wallet" },
-  { icon: Zap, title: "AI Recommendations", desc: "AI-powered token discovery" },
-  { icon: TrendingUp, title: "Prediction Market", desc: "Powered by Polymarket integration" },
-  { icon: Users, title: "Affiliate Program", desc: "Referral rewards for community growth" },
-  { icon: Coins, title: "Buy/Sell with Fiat", desc: "On-ramp and off-ramp support" },
-  { icon: BarChart2, title: "Market Analysis & News", desc: "Crypto news and market insights" },
-  { icon: KeyRound, title: "Cold Card Hardware", desc: "Hardware wallet integration" },
-  { icon: QrCode, title: "QR Payments", desc: "Send and receive crypto instantly via QR" },
+const FEATURES = [
+  "Multi-Chain Support (50+)",
+  "Built-in Swap",
+  "Token Recommendations",
+  "Prediction Market",
+  "Affiliate Program",
+  "Buy/Sell with Fiat",
+  "Market Analysis & News",
+  "Cold Card Hardware",
+  "Non-Custodial",
+  "QR Payments",
 ];
+
+const WALLETS = [
+  { name: "HOSHI Swap", cols: [true, true, true, true, true, true, true, true, true, true] },
+  { name: "Trust Wallet", cols: [true, true, false, false, false, true, false, false, true, true] },
+  { name: "Best Wallet", cols: [false, false, false, false, true, true, false, false, true, false] },
+  { name: "Coinbase Wallet", cols: [true, false, false, false, false, true, false, false, true, true] },
+];
+
+function Dot({ active, primary }: { active: boolean; primary?: boolean }) {
+  if (!active) {
+    return <span className="inline-block w-3 h-3 rounded-full bg-neutral-200" />;
+  }
+  return (
+    <span
+      className={`inline-block w-3 h-3 rounded-full ${primary ? "bg-primary" : "bg-primary/70"}`}
+    />
+  );
+}
 
 export default function FeatureGrid() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-5xl md:text-7xl font-['Bebas_Neue'] text-center mb-16 text-foreground">
-          EVERYTHING YOU NEED IN ONE WALLET
+    <section className="py-24 bg-white" id="features">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="text-5xl md:text-7xl font-['Bebas_Neue'] text-center mb-14 text-foreground">
+          STANDOUT FEATURES
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {GRID_ITEMS.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div 
-                key={idx} 
-                className="bg-neutral-50 p-8 rounded-2xl border border-neutral-100 hover:border-primary/50 transition-colors group cursor-default"
-              >
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-6 text-foreground group-hover:text-primary transition-colors">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
-                <p className="text-muted-foreground font-medium">{item.desc}</p>
-              </div>
-            );
-          })}
+
+        <div className="overflow-x-auto rounded-2xl border border-neutral-200">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-neutral-200">
+                <th className="text-left py-4 px-6 font-semibold text-neutral-500 w-1/3">Features</th>
+                {WALLETS.map((w, i) => (
+                  <th key={i} className={`py-4 px-4 text-center font-bold ${i === 0 ? "text-foreground" : "text-neutral-400"}`}>
+                    {w.name}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {FEATURES.map((feature, fi) => (
+                <tr
+                  key={fi}
+                  className="border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors"
+                >
+                  <td className="py-4 px-6 font-medium text-neutral-700">{feature}</td>
+                  {WALLETS.map((w, wi) => (
+                    <td key={wi} className="py-4 px-4 text-center">
+                      <Dot active={w.cols[fi]} primary={wi === 0} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

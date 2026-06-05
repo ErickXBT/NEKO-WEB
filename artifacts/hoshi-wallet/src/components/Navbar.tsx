@@ -24,11 +24,10 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-50">
-          <img src={hoshiLogoPath} alt="HOSHI Wallet" className="h-8 w-auto" />
-          <span className="font-['Bebas_Neue'] text-2xl tracking-wider text-foreground">HOSHI WALLET</span>
+          <img src={hoshiLogoPath} alt="HOSHI Swap" className="h-8 w-auto" />
+          <span className="font-['Bebas_Neue'] text-2xl tracking-wider text-foreground">HOSHI SWAP</span>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <Link href="#home" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">HOME</Link>
           <Link href="#security" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">SECURITY</Link>
@@ -38,7 +37,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center">
-          <button 
+          <button
             className="bg-primary hover:bg-red-700 text-white font-bold px-6 py-2.5 rounded-full flex items-center gap-2 transition-all"
             data-testid="btn-download"
           >
@@ -46,8 +45,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden z-50 text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="btn-mobile-menu"
@@ -55,13 +53,13 @@ export default function Navbar() {
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 pt-16">
+            <img src={hoshiLogoPath} alt="HOSHI Swap" className="h-12 w-auto mb-4" />
             <Link href="#home" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">HOME</Link>
             <Link href="#security" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SECURITY</Link>
             <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">FEATURES</Link>
-            <Link href="#token" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">HOSHI TOKEN</Link>
+            <Link href="#token" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">$HOSHI TOKEN</Link>
             <Link href="#support" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SUPPORT</Link>
             <button className="bg-primary text-white font-bold px-8 py-3 rounded-full flex items-center gap-2 mt-4">
               DOWNLOAD <ArrowRight className="w-5 h-5" />

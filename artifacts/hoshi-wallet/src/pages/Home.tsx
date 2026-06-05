@@ -7,6 +7,7 @@ import FeatureShowcase from "@/components/FeatureShowcase";
 import FeatureGrid from "@/components/FeatureGrid";
 import Roadmap from "@/components/Roadmap";
 import Download from "@/components/Download";
+import NotifyMe from "@/components/NotifyMe";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <FeatureGrid />
       <Roadmap />
       <Download />
+      <NotifyMe />
       <FAQ />
       <Footer />
     </div>
