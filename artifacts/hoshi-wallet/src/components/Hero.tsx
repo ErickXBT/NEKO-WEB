@@ -103,7 +103,7 @@ export default function Hero() {
               <img
                 src={hoshiLogoPath}
                 alt="HOSHI Swap Logo"
-                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-contain drop-shadow-2xl select-none"
+                className="relative w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[630px] lg:h-[630px] object-contain drop-shadow-2xl select-none"
                 draggable={false}
               />
             </div>
