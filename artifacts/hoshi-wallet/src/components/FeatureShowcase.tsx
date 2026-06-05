@@ -1,5 +1,7 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import img1 from "@assets/image_1780589377839.png";
 import img2 from "@assets/image_1780589392895.png";
@@ -10,135 +12,78 @@ import img6 from "@assets/image_1780589449046.png";
 import img7 from "@assets/image_1780589462620.png";
 import img8 from "@assets/image_1780589474166.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const PANELS = [
-  { img: img1, num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",   desc: "Thousands of tokens, dozens of chains. HOSHI Wallet finds the best rate for you — no need to open a DEX or browser." },
-  { img: img2, num: "02", tag: "ASSETS",         title: "1000+ TOKENS & COINS",              desc: "Bitcoin, Ethereum, Solana, and thousands more across 50+ blockchains. All in one wallet." },
-  { img: img3, num: "03", tag: "TRANSFER",       title: "TRANSFER CRYPTO INSTANTLY",        desc: "Send and receive tokens across 50+ blockchains. Paste address or scan QR — seconds, not minutes." },
-  { img: img4, num: "04", tag: "PREDICTION",     title: "PREDICT REAL-WORLD EVENTS",        desc: "Elections, sports, culture — place predictions directly from the app. Live odds, fast payouts." },
-  { img: img5, num: "05", tag: "INTELLIGENCE",   title: "NEWS & SECTOR ANALYSIS BUILT-IN",  desc: "Real-time crypto news, sector money flow, fear & greed index — smarter moves, right inside the app." },
-  { img: img6, num: "06", tag: "CUSTOMIZE",      title: "ADD ANY TOKEN YOU WANT",           desc: "Search thousands of tokens or add custom ones by contract address. Your wallet, your tokens — no limits." },
-  { img: img7, num: "07", tag: "PORTFOLIO",      title: "ALL WALLETS, ONE SCREEN",          desc: "Every chain, every wallet, every token — in one place. Live balance updates. Share your portfolio with friends." },
+  { img: img1, num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",    desc: "Thousands of tokens, dozens of chains. HOSHI Wallet finds the best rate for you — no need to open a DEX or browser." },
+  { img: img2, num: "02", tag: "ASSETS",         title: "1000+ TOKENS & COINS",               desc: "Bitcoin, Ethereum, Solana, and thousands more across 50+ blockchains. All in one wallet." },
+  { img: img3, num: "03", tag: "TRANSFER",       title: "TRANSFER CRYPTO INSTANTLY",          desc: "Send and receive tokens across 50+ blockchains. Paste address or scan QR — seconds, not minutes." },
+  { img: img4, num: "04", tag: "PREDICTION",     title: "PREDICT REAL-WORLD EVENTS",          desc: "Elections, sports, culture — place predictions directly from the app. Live odds, fast payouts." },
+  { img: img5, num: "05", tag: "INTELLIGENCE",   title: "NEWS & SECTOR ANALYSIS BUILT-IN",   desc: "Real-time crypto news, sector money flow, fear & greed index — smarter moves, right inside the app." },
+  { img: img6, num: "06", tag: "CUSTOMIZE",      title: "ADD ANY TOKEN YOU WANT",             desc: "Search thousands of tokens or add custom ones by contract address. Your wallet, your tokens — no limits." },
+  { img: img7, num: "07", tag: "PORTFOLIO",      title: "ALL WALLETS, ONE SCREEN",            desc: "Every chain, every wallet, every token — in one place. Live balance updates. Share your portfolio." },
   { img: img8, num: "08", tag: "DISCOVERY",      title: "DISCOVER TOKENS BEFORE THEY TREND", desc: "Our engine filters tokens with real market data — not just hype. One tap to add to your wallet." },
 ];
 
 const TOTAL = PANELS.length;
-const DURATION = 1.4;
-const AUTOPLAY_MS = 9000;
 
 export default function FeatureShowcase() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
-  const [animating, setAnimating] = useState(false);
-  const autoRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const progressFillRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
 
-  /* Animate to a slide index */
-  const goTo = useCallback((idx: number) => {
-    if (animating) return;
-    const next = (idx + TOTAL) % TOTAL;
-    setAnimating(true);
+  useGSAP(() => {
+    const panels = gsap.utils.toArray<HTMLElement>(".feat-slide-panel");
 
-    /* Slide track */
-    gsap.to(trackRef.current, {
-      x: `-${next * 100}%`,
-      duration: DURATION,
-      ease: "power3.inOut",
-      onComplete: () => {
-        setActive(next);
-        setAnimating(false);
-      },
-    });
-
-    /* Progress bar fill */
-    if (progressRef.current) {
-      gsap.to(progressRef.current, {
-        scaleX: (next + 1) / TOTAL,
-        duration: DURATION,
-        ease: "power3.inOut",
-        transformOrigin: "left center",
-      });
-    }
-  }, [animating]);
-
-  /* Autoplay */
-  const scheduleNext = useCallback(() => {
-    if (autoRef.current) clearTimeout(autoRef.current);
-    autoRef.current = setTimeout(() => {
-      setActive(cur => {
-        const next = (cur + 1) % TOTAL;
-        if (!animating) {
-          gsap.to(trackRef.current, {
-            x: `-${next * 100}%`,
-            duration: DURATION,
-            ease: "power3.inOut",
-          });
-          if (progressRef.current) {
-            gsap.to(progressRef.current, {
-              scaleX: (next + 1) / TOTAL,
-              duration: DURATION,
-              ease: "power3.inOut",
+    /* Pin section + scrub horizontal slide — same pattern as Security */
+    gsap.to(panels, {
+      xPercent: -100 * (panels.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        pin: true,
+        scrub: 1,
+        start: "top top",
+        end: () => `+=${panels.length * 100}%`,
+        onUpdate: (self) => {
+          const idx = Math.min(
+            Math.round(self.progress * (panels.length - 1)),
+            panels.length - 1,
+          );
+          setActiveIdx(idx);
+          if (progressFillRef.current) {
+            gsap.set(progressFillRef.current, {
+              scaleX: (idx + 1) / panels.length,
               transformOrigin: "left center",
             });
           }
-        }
-        return next;
-      });
-      scheduleNext();
-    }, AUTOPLAY_MS);
-  }, [animating]);
-
-  useEffect(() => {
-    /* Set initial progress */
-    if (progressRef.current) {
-      gsap.set(progressRef.current, { scaleX: 1 / TOTAL, transformOrigin: "left center" });
-    }
-    scheduleNext();
-    return () => { if (autoRef.current) clearTimeout(autoRef.current); };
-  }, []);
-
-  /* Keyboard nav */
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") { goTo(active + 1); scheduleNext(); }
-      if (e.key === "ArrowLeft")  { goTo(active - 1); scheduleNext(); }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [active, goTo, scheduleNext]);
-
-  const handleNav = (dir: 1 | -1) => {
-    goTo(active + dir);
-    scheduleNext();
-  };
+        },
+      },
+    });
+  }, { scope: sectionRef });
 
   return (
     <section
+      ref={sectionRef}
       id="features"
-      className="relative w-full overflow-hidden"
-      style={{ height: "100vh", background: "#080808" }}
+      className="h-screen w-full overflow-hidden relative"
+      style={{ background: "#080808" }}
     >
       {/* ── Slide track ── */}
-      <div
-        ref={trackRef}
-        style={{
-          display: "flex",
-          width: `${TOTAL * 100}%`,
-          height: "100%",
-          willChange: "transform",
-        }}
-      >
+      <div style={{ display: "flex", width: "100%", height: "100%" }}>
         {PANELS.map((panel, i) => (
           <div
             key={i}
+            className="feat-slide-panel"
             style={{
-              width: `${100 / TOTAL}%`,
-              flexShrink: 0,
+              width: "100%",
               height: "100%",
+              flexShrink: 0,
               position: "relative",
               overflow: "hidden",
             }}
           >
-            {/* Radial red glow bg */}
+            {/* Red radial glow */}
             <div style={{
               position: "absolute", inset: 0, zIndex: 0,
               background: "radial-gradient(ellipse 55% 65% at 72% 50%, rgba(220,38,38,0.13) 0%, transparent 70%)",
@@ -155,7 +100,7 @@ export default function FeatureShowcase() {
 
             {/* Ghost number */}
             <div style={{
-              position: "absolute", left: "-2vw", bottom: "-8vh", zIndex: 1,
+              position: "absolute", left: "-1vw", bottom: "-8vh", zIndex: 1,
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: "28vw", lineHeight: 1,
               color: "rgba(255,255,255,0.03)",
@@ -165,7 +110,7 @@ export default function FeatureShowcase() {
               /{panel.num}
             </div>
 
-            {/* Content layout */}
+            {/* Content */}
             <div style={{
               position: "relative", zIndex: 2,
               width: "100%", height: "100%",
@@ -173,15 +118,15 @@ export default function FeatureShowcase() {
               padding: "0 6vw",
               gap: "4vw",
             }}>
-              {/* LEFT — text */}
+              {/* LEFT: text */}
               <div style={{ flex: "0 0 46%", maxWidth: "46%" }}>
                 {/* Tag */}
                 <p style={{
                   color: "#DC2626",
                   fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: "clamp(12px, 1.1vw, 16px)",
+                  fontSize: "clamp(11px, 1.05vw, 15px)",
                   letterSpacing: "0.3em",
-                  marginBottom: "1.25rem",
+                  marginBottom: "1.2rem",
                   display: "flex", alignItems: "center", gap: "0.6rem",
                 }}>
                   <span style={{ display: "inline-block", width: 28, height: 2, background: "#DC2626" }} />
@@ -191,37 +136,37 @@ export default function FeatureShowcase() {
                 {/* Ghost slide number */}
                 <p style={{
                   fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: "clamp(32px, 4vw, 60px)",
-                  color: "rgba(255,255,255,0.12)",
-                  lineHeight: 1, marginBottom: "0.15rem",
+                  fontSize: "clamp(28px, 3.5vw, 56px)",
+                  color: "rgba(255,255,255,0.1)",
+                  lineHeight: 1, marginBottom: "0.1rem",
                 }}>/{panel.num}</p>
 
                 {/* Title */}
                 <h2 style={{
                   fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: "clamp(32px, 5vw, 72px)",
+                  fontSize: "clamp(30px, 4.8vw, 70px)",
                   color: "#ffffff",
                   lineHeight: 1.0,
-                  marginBottom: "1.75rem",
+                  marginBottom: "1.6rem",
                 }}>
                   {panel.title}
                 </h2>
 
                 {/* Red rule */}
-                <div style={{ width: 56, height: 2, background: "#DC2626", marginBottom: "1.75rem" }} />
+                <div style={{ width: 52, height: 2, background: "#DC2626", marginBottom: "1.6rem" }} />
 
-                {/* Desc */}
+                {/* Description */}
                 <p style={{
-                  fontSize: "clamp(14px, 1.15vw, 18px)",
-                  color: "rgba(255,255,255,0.6)",
-                  lineHeight: 1.8,
-                  maxWidth: 440,
+                  fontSize: "clamp(14px, 1.1vw, 17px)",
+                  color: "rgba(255,255,255,0.58)",
+                  lineHeight: 1.85,
+                  maxWidth: 420,
                 }}>
                   {panel.desc}
                 </p>
               </div>
 
-              {/* RIGHT — phone image */}
+              {/* RIGHT: phone image */}
               <div style={{
                 flex: "1 1 54%",
                 display: "flex", alignItems: "center", justifyContent: "center",
@@ -231,8 +176,8 @@ export default function FeatureShowcase() {
                   {/* Glow behind phone */}
                   <div style={{
                     position: "absolute", inset: "-25%",
-                    background: "radial-gradient(circle, rgba(220,38,38,0.22) 0%, transparent 65%)",
-                    filter: "blur(48px)",
+                    background: "radial-gradient(circle, rgba(220,38,38,0.2) 0%, transparent 65%)",
+                    filter: "blur(50px)",
                     zIndex: 0,
                   }} />
                   <img
@@ -240,7 +185,7 @@ export default function FeatureShowcase() {
                     alt={panel.title}
                     style={{
                       position: "relative", zIndex: 1,
-                      height: "min(72vh, 560px)", width: "auto",
+                      height: "min(70vh, 540px)", width: "auto",
                       objectFit: "contain",
                       filter: "drop-shadow(0 48px 80px rgba(0,0,0,0.85))",
                     }}
@@ -252,126 +197,86 @@ export default function FeatureShowcase() {
         ))}
       </div>
 
-      {/* ── Prev button ── */}
-      <NavBtn
-        side="left"
-        onClick={() => handleNav(-1)}
-        label="Previous slide"
-      />
+      {/* ── Bottom UI ── */}
 
-      {/* ── Next button ── */}
-      <NavBtn
-        side="right"
-        onClick={() => handleNav(1)}
-        label="Next slide"
-      />
-
-      {/* ── Bottom pagination bar ── */}
+      {/* Progress counter + bar */}
       <div style={{
-        position: "absolute", bottom: 44, left: "50%",
+        position: "absolute", bottom: 40, left: "50%",
         transform: "translateX(-50%)",
         zIndex: 20,
-        display: "flex", alignItems: "center", gap: 16,
+        display: "flex", alignItems: "center", gap: 14,
         width: "min(480px, 60vw)",
+        pointerEvents: "none",
       }}>
         <span style={{
           fontFamily: "'Bebas Neue', sans-serif",
-          color: "rgba(255,255,255,0.45)",
-          fontSize: 15, minWidth: 28, textAlign: "right",
+          color: "rgba(255,255,255,0.4)",
+          fontSize: 14, minWidth: 28, textAlign: "right",
         }}>
-          {String(active + 1).padStart(2, "0")}
+          {String(activeIdx + 1).padStart(2, "0")}
         </span>
 
-        {/* Progress bar track */}
+        {/* Track */}
         <div style={{
           flex: 1, height: 2,
           background: "rgba(255,255,255,0.12)",
-          borderRadius: 2,
-          overflow: "hidden",
-          position: "relative",
+          borderRadius: 2, overflow: "hidden", position: "relative",
         }}>
           <div
-            ref={progressRef}
+            ref={progressFillRef}
             style={{
               position: "absolute", inset: 0,
-              background: "#DC2626",
-              borderRadius: 2,
+              background: "#DC2626", borderRadius: 2,
               transformOrigin: "left center",
+              transform: `scaleX(${1 / TOTAL})`,
             }}
           />
         </div>
 
         <span style={{
           fontFamily: "'Bebas Neue', sans-serif",
-          color: "rgba(255,255,255,0.45)",
-          fontSize: 15, minWidth: 28,
+          color: "rgba(255,255,255,0.4)",
+          fontSize: 14, minWidth: 28,
         }}>
           {String(TOTAL).padStart(2, "0")}
         </span>
       </div>
 
-      {/* ── Dot indicators ── */}
+      {/* Dot indicators */}
       <div style={{
         position: "absolute", bottom: 80, left: "50%",
         transform: "translateX(-50%)",
         zIndex: 20,
-        display: "flex", gap: 8,
+        display: "flex", gap: 7,
+        pointerEvents: "none",
       }}>
         {PANELS.map((_, i) => (
-          <button
+          <div
             key={i}
-            onClick={() => { goTo(i); scheduleNext(); }}
-            aria-label={`Go to slide ${i + 1}`}
             style={{
-              width: i === active ? 24 : 6,
-              height: 6,
-              borderRadius: 4,
-              background: i === active ? "#DC2626" : "rgba(255,255,255,0.2)",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-              transition: "width 0.4s ease, background 0.3s",
+              width: i === activeIdx ? 22 : 6,
+              height: 6, borderRadius: 4,
+              background: i === activeIdx ? "#DC2626" : "rgba(255,255,255,0.18)",
+              transition: "width 0.35s ease, background 0.25s",
             }}
           />
         ))}
       </div>
-    </section>
-  );
-}
 
-/* ── Nav button sub-component ── */
-function NavBtn({
-  side, onClick, label,
-}: {
-  side: "left" | "right";
-  onClick: () => void;
-  label: string;
-}) {
-  const [hover, setHover] = useState(false);
-  return (
-    <button
-      aria-label={label}
-      onClick={onClick}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{
-        position: "absolute",
-        bottom: 36,
-        [side]: 40,
+      {/* Scroll hint */}
+      <div style={{
+        position: "absolute", right: 40, bottom: 40,
         zIndex: 20,
-        width: 52, height: 52,
-        borderRadius: "50%",
-        background: hover ? "rgba(220,38,38,0.22)" : "rgba(255,255,255,0.07)",
-        border: `1px solid ${hover ? "#DC2626" : "rgba(255,255,255,0.14)"}`,
-        backdropFilter: "blur(12px)",
-        color: "#fff",
-        fontSize: 18,
-        cursor: "pointer",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        transition: "background 0.28s, border-color 0.28s",
-      }}
-    >
-      {side === "left" ? "←" : "→"}
-    </button>
+        color: "rgba(255,255,255,0.25)",
+        fontSize: 11,
+        letterSpacing: "0.22em",
+        fontFamily: "'Bebas Neue', sans-serif",
+        writingMode: "vertical-rl",
+        textOrientation: "mixed",
+        pointerEvents: "none",
+      }}>
+        SCROLL TO EXPLORE ↓
+      </div>
+    </section>
   );
 }
