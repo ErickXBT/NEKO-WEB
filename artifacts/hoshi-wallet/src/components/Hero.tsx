@@ -1,91 +1,114 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import imgCenter from "@assets/image_1780589377839.png";
-import imgLeft from "@assets/image_1780589462620.png";
-import imgRight from "@assets/image_1780589409230.png";
+import hoshiLogoPath from "@assets/LOGO_HOSHI_SWAP_1780626293131.png";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    tl.from(".hero-phone-center", { y: 120, opacity: 0, duration: 1 })
-      .from(".hero-phone-left", { x: -80, y: 80, opacity: 0, duration: 1 }, "-=0.7")
-      .from(".hero-phone-right", { x: 80, y: 80, opacity: 0, duration: 1 }, "-=0.9")
-      .from(".hero-title", { y: 60, opacity: 0, duration: 0.9, stagger: 0.08 }, "-=0.6")
-      .from(".hero-fade", { opacity: 0, y: 20, duration: 0.7, stagger: 0.1 }, "-=0.4");
+    tl.from(".hero-left > *", { x: -60, opacity: 0, duration: 0.9, stagger: 0.12 })
+      .from(".hero-logo", { x: 80, opacity: 0, scale: 0.85, duration: 1.1 }, "-=0.7")
+      .from(".hero-stats", { opacity: 0, y: 20, duration: 0.7, stagger: 0.1 }, "-=0.4");
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white"
       id="home"
     >
-      {/* Decorative Red Square */}
-      <div className="absolute top-36 left-10 w-4 h-4 bg-primary hero-fade" />
+      {/* Subtle background grid */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
 
-      {/* Right tagline */}
-      <div className="absolute top-1/2 right-6 md:right-12 -translate-y-1/2 max-w-[180px] text-right text-muted-foreground text-xs font-medium leading-relaxed hidden md:block hero-fade">
-        Swap, earn, predict, track portfolio — everything in one app.
-        50+ blockchains, self-custody, keys only on your device
-      </div>
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl w-full pt-24 pb-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 
-      <div className="w-full flex flex-col items-center px-4">
-        {/* Phone cluster */}
-        <div className="relative w-full max-w-3xl flex justify-center items-end" style={{ height: "56vh" }}>
+          {/* LEFT — text */}
+          <div className="hero-left flex flex-col items-start gap-6 lg:max-w-[55%]">
 
-          {/* Left Phone */}
-          <div className="absolute bottom-0 hero-phone-left"
-            style={{ left: "5%", width: "27%", maxWidth: 260, zIndex: 10, transform: "rotate(-14deg)", transformOrigin: "bottom right" }}>
-            <img src={imgLeft} alt="Portfolio View" className="w-full h-auto drop-shadow-2xl rounded-[2.5rem]" />
+            {/* Badge */}
+            <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-primary border border-primary/30 bg-primary/5 px-4 py-2 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              ONE WALLET. EVERY CHAIN. EVERYTHING DEFI.
+            </span>
+
+            {/* Headline */}
+            <h1
+              className="font-['Bebas_Neue'] text-foreground leading-[0.92] tracking-tight"
+              style={{ fontSize: "clamp(3.5rem, 9vw, 8.5rem)" }}
+            >
+              THE ULTIMATE<br />
+              MULTI-CHAIN<br />
+              <span className="text-primary">CRYPTO WALLET</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-muted-foreground font-medium text-base md:text-lg max-w-lg leading-relaxed">
+              Manage assets across 50+ blockchains, swap instantly, participate in prediction markets,
+              earn rewards, and stay ahead with market intelligence.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-3 mt-2">
+              <button
+                data-testid="btn-google-play"
+                className="px-6 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors"
+              >
+                GOOGLE PLAY
+              </button>
+              <button
+                data-testid="btn-app-store"
+                className="px-6 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors"
+              >
+                APP STORE
+              </button>
+              <button
+                data-testid="btn-chrome-ext"
+                className="px-6 py-3 rounded-full bg-primary border-2 border-primary text-white font-bold text-sm hover:bg-red-700 transition-colors"
+              >
+                CHROME EXT
+              </button>
+            </div>
+
+            {/* Stats row */}
+            <div className="flex flex-wrap gap-8 mt-4 hero-stats">
+              {[
+                { label: "Chains Supported", value: "50+" },
+                { label: "Built-in Swap", value: "Yes" },
+                { label: "Non-Custodial", value: "100%" },
+                { label: "Prediction Market", value: "Live" },
+              ].map((stat, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="font-['Bebas_Neue'] text-3xl text-foreground leading-none">{stat.value}</span>
+                  <span className="text-xs text-muted-foreground font-semibold tracking-wide mt-1">{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Phone */}
-          <div className="absolute bottom-0 hero-phone-right"
-            style={{ right: "5%", width: "27%", maxWidth: 260, zIndex: 10, transform: "rotate(14deg)", transformOrigin: "bottom left" }}>
-            <img src={imgRight} alt="Transfer View" className="w-full h-auto drop-shadow-2xl rounded-[2.5rem]" />
+          {/* RIGHT — large logo */}
+          <div className="hero-logo flex-shrink-0 flex items-center justify-center lg:max-w-[40%] w-full">
+            <div className="relative">
+              {/* Glow ring behind logo */}
+              <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl scale-110 pointer-events-none" />
+              <img
+                src={hoshiLogoPath}
+                alt="HOSHI Swap Logo"
+                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-contain drop-shadow-2xl select-none"
+                draggable={false}
+              />
+            </div>
           </div>
 
-          {/* Center Phone */}
-          <div className="absolute bottom-0 hero-phone-center"
-            style={{ left: "50%", transform: "translateX(-50%)", width: "33%", maxWidth: 300, zIndex: 20 }}>
-            <img src={imgCenter} alt="Swap View" className="w-full h-auto drop-shadow-2xl rounded-[2.5rem]" />
-          </div>
-
-        </div>
-
-        {/* Text block */}
-        <div className="w-full text-center mt-8 z-30">
-          <h1 className="font-['Bebas_Neue'] leading-none tracking-tight text-foreground hero-title"
-            style={{ fontSize: "clamp(3rem, 12vw, 10rem)" }}>
-            HOSHI SWAP
-          </h1>
-          <p className="font-bold tracking-widest text-muted-foreground mt-2 hero-title"
-            style={{ fontSize: "clamp(0.7rem, 2.2vw, 1.3rem)" }}>
-            ALL-IN-ONE WALLET FOR 50+ BLOCKCHAINS
-          </p>
-
-          {/* Download buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-10 hero-fade">
-            <button
-              data-testid="btn-google-play"
-              className="px-7 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors">
-              GOOGLE PLAY
-            </button>
-            <button
-              data-testid="btn-app-store"
-              className="px-7 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors">
-              APP STORE
-            </button>
-            <button
-              data-testid="btn-chrome-ext"
-              className="px-7 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors">
-              CHROME EXT
-            </button>
-          </div>
         </div>
       </div>
     </section>
