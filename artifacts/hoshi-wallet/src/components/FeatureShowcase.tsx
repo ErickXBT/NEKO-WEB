@@ -2,29 +2,20 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
-/* Slide images */
-import imgSwap     from "@assets/image_1780589377839.png";
-import imgTokens   from "@assets/image_1780589392895.png";
-import imgTransfer from "@assets/image_1780589409230.png";
-import imgPredict  from "@assets/image_1780589420005.png";
-import imgNews     from "@assets/image_1780589437631.png";
-import imgAddToken from "@assets/image_1780589449046.png";
-import imgPortfolio from "@assets/image_1780589462620.png";
-import imgDiscover  from "@assets/image_1780589474166.png";
+import PhoneMockup from "@/components/PhoneMockup";
 
 gsap.registerPlugin(ScrollTrigger);
 
 /* Odd index (0,2,4,6) = white  |  Even index (1,3,5,7) = red */
 const PANELS = [
-  { img: imgSwap,      num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",    desc: "Thousands of tokens, dozens of chains. HOSHI Wallet finds the best rate for you — no need to open a DEX or browser.",       scheme: "light" },
-  { img: imgTokens,    num: "02", tag: "ASSETS",         title: "1000+ TOKENS & COINS",               desc: "Bitcoin, Ethereum, Solana, and thousands more across 50+ blockchains. All in one wallet.",                                  scheme: "dark"  },
-  { img: imgTransfer,  num: "03", tag: "TRANSFER",       title: "TRANSFER CRYPTO INSTANTLY",          desc: "Send and receive tokens across 50+ blockchains. Paste address or scan QR — it takes seconds, not minutes.",                scheme: "light" },
-  { img: imgPredict,   num: "04", tag: "PREDICTION",     title: "PREDICT REAL-WORLD EVENTS",          desc: "Elections, sports, culture — place predictions directly from the app. Live odds, fast payouts.",                           scheme: "dark"  },
-  { img: imgNews,      num: "05", tag: "INTELLIGENCE",   title: "NEWS & SECTOR ANALYSIS BUILT-IN",    desc: "Real-time crypto news, sector money flow, fear & greed index — all the data you need, right inside the app.",             scheme: "light" },
-  { img: imgAddToken,  num: "06", tag: "CUSTOMIZE",      title: "ADD ANY TOKEN YOU WANT",             desc: "Search from thousands of tokens or add custom ones by contract address. Your wallet, your tokens — no restrictions.",      scheme: "dark"  },
-  { img: imgPortfolio, num: "07", tag: "PORTFOLIO",      title: "ALL WALLETS, ONE SCREEN",            desc: "Every chain, every wallet, every token — visible in one place. Live balance updates. Share your portfolio with friends.",  scheme: "light" },
-  { img: imgDiscover,  num: "08", tag: "DISCOVERY",      title: "DISCOVER TOKENS BEFORE THEY TREND", desc: "Our recommendation engine filters tokens using real market data — not just hype. One tap adds it to your wallet.",          scheme: "dark"  },
+  { num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",    desc: "Thousands of tokens, dozens of chains. HOSHI Wallet finds the best rate for you — no need to open a DEX or browser.",       scheme: "light" },
+  { num: "02", tag: "ASSETS",         title: "1000+ TOKENS & COINS",               desc: "Bitcoin, Ethereum, Solana, and thousands more across 50+ blockchains. All in one wallet.",                                  scheme: "dark"  },
+  { num: "03", tag: "TRANSFER",       title: "TRANSFER CRYPTO INSTANTLY",          desc: "Send and receive tokens across 50+ blockchains. Paste address or scan QR — it takes seconds, not minutes.",                scheme: "light" },
+  { num: "04", tag: "PREDICTION",     title: "PREDICT REAL-WORLD EVENTS",          desc: "Elections, sports, culture — place predictions directly from the app. Live odds, fast payouts.",                           scheme: "dark"  },
+  { num: "05", tag: "INTELLIGENCE",   title: "NEWS & SECTOR ANALYSIS BUILT-IN",    desc: "Real-time crypto news, sector money flow, fear & greed index — all the data you need, right inside the app.",             scheme: "light" },
+  { num: "06", tag: "CUSTOMIZE",      title: "ADD ANY TOKEN YOU WANT",             desc: "Search from thousands of tokens or add custom ones by contract address. Your wallet, your tokens — no restrictions.",      scheme: "dark"  },
+  { num: "07", tag: "PORTFOLIO",      title: "ALL WALLETS, ONE SCREEN",            desc: "Every chain, every wallet, every token — visible in one place. Live balance updates. Share your portfolio with friends.",  scheme: "light" },
+  { num: "08", tag: "DISCOVERY",      title: "DISCOVER TOKENS BEFORE THEY TREND", desc: "Our recommendation engine filters tokens using real market data — not just hype. One tap adds it to your wallet.",          scheme: "dark"  },
 ] as const;
 
 const TOTAL = PANELS.length;
@@ -212,30 +203,27 @@ export default function FeatureShowcase() {
                   </p>
                 </div>
 
-                {/* RIGHT — phone image */}
+                {/* RIGHT — phone mockup */}
                 <div style={{
                   flex: "1 1 54%",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   height: "100%",
+                  position: "relative",
                 }}>
-                  <div style={{ position: "relative" }}>
-                    <div style={{
-                      position: "absolute", inset: "-25%",
-                      background: `radial-gradient(circle, ${th.phoneGlow} 0%, transparent 65%)`,
-                      filter: "blur(50px)",
-                      zIndex: 0,
-                    }} />
-                    <img
-                      src={panel.img}
-                      alt={panel.title}
-                      style={{
-                        position: "relative", zIndex: 1,
-                        height: "min(70vh, 540px)", width: "auto",
-                        objectFit: "contain",
-                        filter: panel.scheme === "dark"
-                          ? "drop-shadow(0 40px 70px rgba(0,0,0,0.4))"
-                          : "drop-shadow(0 40px 70px rgba(0,0,0,0.25))",
-                      }}
+                  {/* Glow behind phone */}
+                  <div style={{
+                    position: "absolute",
+                    width: "50%", height: "60%",
+                    background: `radial-gradient(circle, ${th.phoneGlow} 0%, transparent 70%)`,
+                    filter: "blur(60px)",
+                    zIndex: 0,
+                    pointerEvents: "none",
+                  }} />
+                  <div style={{ position: "relative", zIndex: 1 }}>
+                    <PhoneMockup
+                      screenIndex={i}
+                      height={Math.min(Math.round(window.innerHeight * 0.72), 520)}
+                      scheme={panel.scheme}
                     />
                   </div>
                 </div>
