@@ -38,7 +38,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center">
           <button
-            className="bg-primary hover:bg-[#c8d90f] text-foreground font-bold px-6 py-2.5 rounded-full flex items-center gap-2 transition-all"
+            className="bg-primary hover:bg-[#c8d90f] text-[#0a0a0a] font-bold px-6 py-2.5 rounded-full flex items-center gap-2 transition-all"
             data-testid="btn-download"
           >
             DOWNLOAD <ArrowRight className="w-4 h-4" />
@@ -61,7 +61,7 @@ export default function Navbar() {
             <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">FEATURES</Link>
             <Link href="#token" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">$NEKO TOKEN</Link>
             <Link href="#support" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SUPPORT</Link>
-            <button className="bg-primary text-white font-bold px-8 py-3 rounded-full flex items-center gap-2 mt-4">
+            <button className="bg-primary text-[#0a0a0a] font-bold px-8 py-3 rounded-full flex items-center gap-2 mt-4">
               DOWNLOAD <ArrowRight className="w-5 h-5" />
             </button>
           </div>

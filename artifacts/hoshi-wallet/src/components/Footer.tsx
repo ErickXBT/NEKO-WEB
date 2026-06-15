@@ -64,7 +64,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="w-full bg-neutral-700 hover:bg-primary text-white font-bold py-3 rounded-lg text-sm tracking-widest transition-colors"
+                className="w-full bg-neutral-700 hover:bg-primary text-white hover:text-[#0a0a0a] font-bold py-3 rounded-lg text-sm tracking-widest transition-colors"
                 data-testid="btn-footer-send"
               >
                 SEND

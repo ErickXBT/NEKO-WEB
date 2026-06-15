@@ -74,7 +74,7 @@ function ScreenSwap() {
 
       {/* Swap icon */}
       <div style={{ display: "flex", justifyContent: "center", margin: "6px 0" }}>
-        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#E1F311", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff" }}>⇅</div>
+        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#E1F311", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#000" }}>⇅</div>
       </div>
 
       {/* To */}
@@ -98,7 +98,7 @@ function ScreenSwap() {
       </div>
 
       {/* Button */}
-      <div style={{ background: "#E1F311", borderRadius: 10, padding: "11px", textAlign: "center", color: "#fff", fontWeight: 800, fontSize: 13 }}>
+      <div style={{ background: "#E1F311", borderRadius: 10, padding: "11px", textAlign: "center", color: "#000", fontWeight: 800, fontSize: 13 }}>
         SWAP NOW
       </div>
     </div>
@@ -168,7 +168,7 @@ function ScreenTransfer() {
         <span style={{ color: "#fff", fontSize: 10 }}>~$1.20</span>
       </div>
 
-      <div style={{ background: "#E1F311", borderRadius: 10, padding: "11px", textAlign: "center", color: "#fff", fontWeight: 800, fontSize: 13 }}>
+      <div style={{ background: "#E1F311", borderRadius: 10, padding: "11px", textAlign: "center", color: "#000", fontWeight: 800, fontSize: 13 }}>
         SEND NOW
       </div>
     </div>

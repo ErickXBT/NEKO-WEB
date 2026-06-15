@@ -293,7 +293,7 @@ export default function ColdCard() {
       <div className="container mx-auto px-4 text-center relative z-10">
 
         <div className="neko-card-title mb-4">
-          <span className="bg-primary text-foreground text-[10px] font-bold px-3 py-1 rounded uppercase tracking-widest inline-block mb-5">
+          <span className="bg-primary text-[#0a0a0a] text-[10px] font-bold px-3 py-1 rounded uppercase tracking-widest inline-block mb-5">
             IN DEVELOPMENT
           </span>
           <h2 className="text-6xl md:text-[clamp(56px,8vw,110px)] font-['Bebas_Neue'] text-foreground leading-[0.88]">
