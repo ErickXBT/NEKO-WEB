@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white border-b border-border shadow-sm py-4" : "bg-transparent py-6"
+        scrolled ? "bg-[#0a0a0a] border-b border-border shadow-sm py-4" : "bg-transparent py-6"
       }`}
       data-testid="navbar"
     >
@@ -54,7 +54,7 @@ export default function Navbar() {
         </button>
 
         {mobileMenuOpen && (
-          <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 pt-16">
+          <div className="fixed inset-0 bg-[#0a0a0a] z-40 flex flex-col items-center justify-center gap-8 pt-16">
             <img src={nekoLogoPath} alt="NEKO Wallet" className="h-12 w-auto mb-4" />
             <Link href="#home" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">HOME</Link>
             <Link href="#security" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SECURITY</Link>

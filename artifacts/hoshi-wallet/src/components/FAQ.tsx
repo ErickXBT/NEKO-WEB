@@ -30,13 +30,13 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-neutral-50">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-5xl md:text-7xl font-['Bebas_Neue'] text-center mb-12 text-foreground">
           FREQUENTLY ASKED
         </h2>
         
-        <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border p-2">
+        <Accordion type="single" collapsible className="w-full bg-card rounded-2xl border p-2">
           {FAQS.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border-b-0 px-4">
               <AccordionTrigger className="text-lg font-bold hover:no-underline hover:text-primary py-6 text-left">

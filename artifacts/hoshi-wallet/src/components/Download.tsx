@@ -19,7 +19,7 @@ export default function Download() {
           <button className="flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-neutral-800 transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto justify-center" data-testid="btn-ios">
             <Apple className="w-5 h-5" /> IOS APP
           </button>
-          <button className="flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-neutral-100 transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto justify-center" data-testid="btn-chrome">
+          <button className="flex items-center gap-3 bg-black text-primary px-8 py-4 rounded-full font-bold hover:bg-neutral-900 transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto justify-center" data-testid="btn-chrome">
             <SiGooglechrome className="w-5 h-5" /> CHROME EXTENSION
           </button>
         </div>

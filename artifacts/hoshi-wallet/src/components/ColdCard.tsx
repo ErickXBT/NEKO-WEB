@@ -281,7 +281,7 @@ export default function ColdCard() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="py-28 md:py-40 bg-white overflow-hidden relative">
+    <section ref={containerRef} className="py-28 md:py-40 bg-background overflow-hidden relative">
 
       <div style={{
         position: "absolute", inset: 0, zIndex: 0, opacity: 0.025,

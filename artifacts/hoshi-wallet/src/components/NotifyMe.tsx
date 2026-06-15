@@ -7,7 +7,7 @@ export default function NotifyMe() {
   const [email, setEmail] = useState("");
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-20 bg-background overflow-hidden">
       {/* Row 1: Filled red text */}
       <div className="relative overflow-hidden mb-[-0.3em]">
         <div

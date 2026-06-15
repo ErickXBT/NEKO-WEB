@@ -31,7 +31,7 @@ function Dot({ active, primary }: { active: boolean; primary?: boolean }) {
 
 export default function FeatureGrid() {
   return (
-    <section className="py-24 bg-white" id="features">
+    <section className="py-24 bg-background" id="features">
       <div className="container mx-auto px-4 max-w-5xl">
         <h2 className="text-5xl md:text-7xl font-['Bebas_Neue'] text-center mb-14 text-foreground">
           STANDOUT FEATURES
@@ -53,9 +53,9 @@ export default function FeatureGrid() {
               {FEATURES.map((feature, fi) => (
                 <tr
                   key={fi}
-                  className="border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors"
+                  className="border-b border-neutral-800 last:border-0 hover:bg-neutral-900 transition-colors"
                 >
-                  <td className="py-4 px-6 font-medium text-neutral-700">{feature}</td>
+                  <td className="py-4 px-6 font-medium text-neutral-300">{feature}</td>
                   {WALLETS.map((w, wi) => (
                     <td key={wi} className="py-4 px-4 text-center">
                       <Dot active={w.cols[fi]} primary={wi === 0} />
