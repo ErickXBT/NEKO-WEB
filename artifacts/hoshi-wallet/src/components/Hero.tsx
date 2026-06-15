@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import mockupImg from "@assets/MOCKUP_1781537911778.png";
+import mockupImg from "@assets/MOCKUP_2_1781552313941.png";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
