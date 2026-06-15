@@ -118,7 +118,7 @@ function IllustEncryption() {
         {/* AES badge */}
         <div style={{
           background: "#E1F311", borderRadius: 6, padding: "4px 14px",
-          color: "#fff", fontFamily: "'Bebas Neue', sans-serif",
+          color: "#000", fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 16, letterSpacing: "0.2em", marginTop: 6,
         }}>AES-256</div>
       </div>

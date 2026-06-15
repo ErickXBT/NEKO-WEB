@@ -156,7 +156,7 @@ function ScreenTransfer() {
           <div key={n} style={{
             flex: 1, textAlign: "center", padding: "6px 4px",
             background: i === 0 ? "#E1F311" : "rgba(255,255,255,0.06)",
-            borderRadius: 8, color: i === 0 ? "#fff" : "rgba(255,255,255,0.4)",
+            borderRadius: 8, color: i === 0 ? "#000" : "rgba(255,255,255,0.4)",
             fontSize: 9, fontWeight: 700,
           }}>{n}</div>
         ))}

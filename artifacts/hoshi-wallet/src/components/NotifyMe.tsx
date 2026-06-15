@@ -55,7 +55,7 @@ export default function NotifyMe() {
           />
           <button
             type="submit"
-            className="bg-primary hover:bg-[#c8d90f] text-foreground w-12 h-12 flex items-center justify-center rounded-full m-1 transition-colors flex-shrink-0"
+            className="bg-primary hover:bg-[#c8d90f] text-[#0a0a0a] w-12 h-12 flex items-center justify-center rounded-full m-1 transition-colors flex-shrink-0"
             data-testid="btn-notify-submit"
           >
             <ArrowRight className="w-5 h-5" />

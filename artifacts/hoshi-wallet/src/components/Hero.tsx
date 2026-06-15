@@ -73,7 +73,7 @@ export default function Hero() {
               </button>
               <button
                 data-testid="btn-chrome-ext"
-                className="px-6 py-3 rounded-full bg-primary border-2 border-primary text-foreground font-bold text-sm hover:bg-[#c8d90f] transition-colors"
+                className="px-6 py-3 rounded-full bg-primary border-2 border-primary text-[#0a0a0a] font-bold text-sm hover:bg-[#c8d90f] transition-colors"
               >
                 CHROME EXT
               </button>
