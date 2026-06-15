@@ -13,15 +13,49 @@ export default function Download() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-neutral-800 transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto justify-center" data-testid="btn-android">
-            <Play className="w-5 h-5" /> ANDROID
-          </button>
-          <button className="flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-neutral-800 transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto justify-center" data-testid="btn-ios">
-            <Apple className="w-5 h-5" /> IOS APP
-          </button>
-          <button className="flex items-center gap-3 bg-black text-primary px-8 py-4 rounded-full font-bold hover:bg-neutral-900 transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto justify-center" data-testid="btn-chrome">
-            <SiGooglechrome className="w-5 h-5" /> CHROME EXTENSION
-          </button>
+
+          {/* Android — Coming Soon */}
+          <div className="relative w-full sm:w-auto">
+            <button
+              disabled
+              className="flex items-center gap-3 bg-black/50 text-white/50 px-8 py-4 rounded-full font-bold w-full sm:w-auto justify-center cursor-not-allowed"
+              data-testid="btn-android"
+            >
+              <Play className="w-5 h-5" /> ANDROID
+            </button>
+            <span className="absolute -top-2.5 -right-2 bg-[#0a0a0a] text-primary text-[10px] font-bold tracking-widest px-2 py-0.5 rounded-full border border-primary/40">
+              SOON
+            </span>
+          </div>
+
+          {/* iOS — Coming Soon */}
+          <div className="relative w-full sm:w-auto">
+            <button
+              disabled
+              className="flex items-center gap-3 bg-black/50 text-white/50 px-8 py-4 rounded-full font-bold w-full sm:w-auto justify-center cursor-not-allowed"
+              data-testid="btn-ios"
+            >
+              <Apple className="w-5 h-5" /> IOS APP
+            </button>
+            <span className="absolute -top-2.5 -right-2 bg-[#0a0a0a] text-primary text-[10px] font-bold tracking-widest px-2 py-0.5 rounded-full border border-primary/40">
+              SOON
+            </span>
+          </div>
+
+          {/* Chrome Extension — Coming Soon */}
+          <div className="relative w-full sm:w-auto">
+            <button
+              disabled
+              className="flex items-center gap-3 bg-black/50 text-white/50 px-8 py-4 rounded-full font-bold w-full sm:w-auto justify-center cursor-not-allowed"
+              data-testid="btn-chrome"
+            >
+              <SiGooglechrome className="w-5 h-5" /> CHROME EXTENSION
+            </button>
+            <span className="absolute -top-2.5 -right-2 bg-[#0a0a0a] text-primary text-[10px] font-bold tracking-widest px-2 py-0.5 rounded-full border border-primary/40">
+              SOON
+            </span>
+          </div>
+
         </div>
       </div>
     </section>

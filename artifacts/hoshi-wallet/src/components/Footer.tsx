@@ -1,4 +1,4 @@
-import { SiX, SiTelegram, SiDiscord, SiInstagram } from "react-icons/si";
+import { SiX, SiTelegram } from "react-icons/si";
 import nekoLogoPath from "@assets/LOGO_1781531503433.jpg";
 
 export default function Footer() {
@@ -26,7 +26,6 @@ export default function Footer() {
               <li><a href="#features" className="hover:text-primary transition-colors">Markets</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">NEKO Card</a></li>
               <li><a href="#roadmap" className="hover:text-primary transition-colors">$NEKO Roadmap</a></li>
-              <li><a href="#token" className="hover:text-primary transition-colors">$NEKO Token</a></li>
             </ul>
           </div>
 
@@ -56,12 +55,6 @@ export default function Footer() {
             <div>
               <p className="text-neutral-500 text-xs font-bold tracking-widest mb-3 text-right">FOLLOW US</p>
               <div className="flex items-center gap-3">
-                <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-400 transition-colors">
-                  <SiInstagram className="w-4 h-4" />
-                </a>
-                <a href="#" aria-label="TikTok" className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-400 transition-colors">
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
-                </a>
                 <a href="#" aria-label="X (Twitter)" className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-400 transition-colors">
                   <SiX className="w-4 h-4" />
                 </a>
