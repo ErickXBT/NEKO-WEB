@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import nekoLogoPath from "@assets/LOGO_1781531503433.jpg";
+import heroPhoneImg from "@assets/Gemini_Generated_Image_72b8k72b8k72b8k7-Photoroom_1781536277221.png";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,7 +24,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -46,36 +46,23 @@ export default function Hero() {
               className="font-['Bebas_Neue'] text-foreground leading-[0.92] tracking-tight"
               style={{ fontSize: "clamp(3.5rem, 9vw, 8.5rem)" }}
             >
-              THE ULTIMATE<br />
-              MULTI-CHAIN<br />
-              <span className="text-primary">CRYPTO WALLET</span>
+              YOUR CRYPTO.<br />
+              YOUR KEYS.<br />
+              <span className="text-primary">YOUR RULES.</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-muted-foreground font-medium text-base md:text-lg max-w-lg leading-relaxed">
-              Manage assets across 50+ blockchains, swap instantly, participate in prediction markets,
-              earn rewards, and stay ahead with market intelligence.
+              Swap, trade, and manage assets across 50+ blockchains — all in one non-custodial wallet built for serious DeFi users.
             </p>
 
-            {/* Buttons */}
+            {/* CTA */}
             <div className="flex flex-wrap gap-3 mt-2">
               <button
-                data-testid="btn-google-play"
-                className="px-6 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors"
+                data-testid="btn-create-wallet"
+                className="px-8 py-4 rounded-full bg-primary text-[#0a0a0a] font-bold text-base hover:bg-[#c8d90f] transition-colors"
               >
-                GOOGLE PLAY
-              </button>
-              <button
-                data-testid="btn-app-store"
-                className="px-6 py-3 rounded-full border-2 border-foreground font-bold text-sm hover:bg-foreground hover:text-white transition-colors"
-              >
-                APP STORE
-              </button>
-              <button
-                data-testid="btn-chrome-ext"
-                className="px-6 py-3 rounded-full bg-primary border-2 border-primary text-[#0a0a0a] font-bold text-sm hover:bg-[#c8d90f] transition-colors"
-              >
-                CHROME EXT
+                CREATE WALLET
               </button>
             </div>
 
@@ -83,9 +70,9 @@ export default function Hero() {
             <div className="flex flex-wrap gap-8 mt-4 hero-stats">
               {[
                 { label: "Chains Supported", value: "50+" },
-                { label: "Built-in Swap", value: "Yes" },
+                { label: "Built-in Swap", value: "YES" },
                 { label: "Non-Custodial", value: "100%" },
-                { label: "Prediction Market", value: "Live" },
+                { label: "Prediction Market", value: "LIVE" },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="font-['Bebas_Neue'] text-3xl text-foreground leading-none">{stat.value}</span>
@@ -95,15 +82,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — large logo */}
-          <div className="hero-logo flex-shrink-0 flex items-center justify-center lg:max-w-[40%] w-full">
+          {/* RIGHT — phone mockup */}
+          <div className="hero-logo flex-shrink-0 flex items-center justify-center lg:max-w-[42%] w-full">
             <div className="relative">
-              {/* Glow ring behind logo */}
               <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl scale-110 pointer-events-none" />
               <img
-                src={nekoLogoPath}
-                alt="NEKO Wallet Logo"
-                className="relative w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[630px] lg:h-[630px] object-contain drop-shadow-2xl select-none"
+                src={heroPhoneImg}
+                alt="NEKO Wallet App"
+                className="relative w-80 md:w-[420px] lg:w-[500px] object-contain drop-shadow-2xl select-none"
                 draggable={false}
               />
             </div>

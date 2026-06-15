@@ -30,10 +30,10 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           <Link href="#home" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">HOME</Link>
-          <Link href="#security" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">SECURITY</Link>
           <Link href="#features" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">FEATURES</Link>
+          <Link href="#security" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">SECURITY</Link>
+          <Link href="#roadmap" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">ROADMAP</Link>
           <Link href="#token" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">$NEKO</Link>
-          <Link href="#support" className="text-sm font-semibold tracking-wide hover:text-primary transition-colors">SUPPORT</Link>
         </div>
 
         <div className="hidden md:flex items-center">
@@ -41,7 +41,7 @@ export default function Navbar() {
             className="bg-primary hover:bg-[#c8d90f] text-[#0a0a0a] font-bold px-6 py-2.5 rounded-full flex items-center gap-2 transition-all"
             data-testid="btn-download"
           >
-            DOWNLOAD <ArrowRight className="w-4 h-4" />
+            NEKO WALLET <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -57,12 +57,12 @@ export default function Navbar() {
           <div className="fixed inset-0 bg-[#0a0a0a] z-40 flex flex-col items-center justify-center gap-8 pt-16">
             <img src={nekoLogoPath} alt="NEKO Wallet" className="h-12 w-auto mb-4" />
             <Link href="#home" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">HOME</Link>
-            <Link href="#security" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SECURITY</Link>
             <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">FEATURES</Link>
-            <Link href="#token" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">$NEKO TOKEN</Link>
-            <Link href="#support" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SUPPORT</Link>
+            <Link href="#security" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SECURITY</Link>
+            <Link href="#roadmap" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">ROADMAP</Link>
+            <Link href="#token" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">$NEKO</Link>
             <button className="bg-primary text-[#0a0a0a] font-bold px-8 py-3 rounded-full flex items-center gap-2 mt-4">
-              DOWNLOAD <ArrowRight className="w-5 h-5" />
+              NEKO WALLET <ArrowRight className="w-5 h-5" />
             </button>
           </div>
         )}
