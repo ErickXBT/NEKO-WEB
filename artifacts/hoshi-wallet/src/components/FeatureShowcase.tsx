@@ -25,23 +25,23 @@ const THEME = {
   light: {
     bg:           "#ffffff",
     title:        "#0a0a0a",
-    tag:          "#DC2626",
-    tagLine:      "#DC2626",
+    tag:          "#E1F311",
+    tagLine:      "#E1F311",
     ghostNum:     "rgba(0,0,0,0.04)",
-    rule:         "#DC2626",
+    rule:         "#E1F311",
     desc:         "rgba(0,0,0,0.55)",
     dotInactive:  "rgba(0,0,0,0.18)",
-    dotActive:    "#DC2626",
+    dotActive:    "#E1F311",
     counter:      "rgba(0,0,0,0.4)",
     progTrack:    "rgba(0,0,0,0.1)",
-    progFill:     "#DC2626",
+    progFill:     "#E1F311",
     hint:         "rgba(0,0,0,0.2)",
     gridColor:    "rgba(0,0,0,1)",
-    phoneGlow:    "rgba(220,38,38,0.18)",
+    phoneGlow:    "rgba(225,243,17,0.18)",
     numBg:        "rgba(0,0,0,0.035)",
   },
   dark: {
-    bg:           "#DC2626",
+    bg:           "#E1F311",
     title:        "#ffffff",
     tag:          "rgba(0,0,0,0.65)",
     tagLine:      "rgba(0,0,0,0.5)",
@@ -102,7 +102,7 @@ export default function FeatureShowcase() {
       ref={sectionRef}
       id="features"
       className="h-screen w-full overflow-hidden relative"
-      style={{ background: PANELS[0].scheme === "light" ? "#ffffff" : "#DC2626" }}
+      style={{ background: PANELS[0].scheme === "light" ? "#ffffff" : "#E1F311" }}
     >
       {/* ── Slide track ── */}
       <div style={{ display: "flex", width: "100%", height: "100%" }}>

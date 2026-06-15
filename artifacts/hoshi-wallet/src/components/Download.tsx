@@ -3,8 +3,8 @@ import { SiGooglechrome } from "react-icons/si";
 
 export default function Download() {
   return (
-    <section className="py-32 bg-primary text-white text-center relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none" />
+    <section className="py-32 bg-primary text-foreground text-center relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E1F311] rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-6xl md:text-8xl font-['Bebas_Neue'] mb-6">GET STARTED WITH NEKO WALLET</h2>

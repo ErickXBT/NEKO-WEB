@@ -6,7 +6,7 @@ import hoshiLogo from "@assets/LOGO_1781531503433.jpg";
 
 /** A single row in a token list */
 function TokenRow({
-  symbol, name, price, change, color = "#DC2626", showBar = false, pct = 0,
+  symbol, name, price, change, color = "#E1F311", showBar = false, pct = 0,
 }: {
   symbol: string; name: string; price: string; change: string;
   color?: string; showBar?: boolean; pct?: number;
@@ -74,7 +74,7 @@ function ScreenSwap() {
 
       {/* Swap icon */}
       <div style={{ display: "flex", justifyContent: "center", margin: "6px 0" }}>
-        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#DC2626", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff" }}>⇅</div>
+        <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#E1F311", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "#fff" }}>⇅</div>
       </div>
 
       {/* To */}
@@ -92,13 +92,13 @@ function ScreenSwap() {
       </div>
 
       {/* Route */}
-      <div style={{ background: "rgba(220,38,38,0.12)", border: "1px solid rgba(220,38,38,0.2)", borderRadius: 8, padding: "8px 10px", marginBottom: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ background: "rgba(225,243,17,0.12)", border: "1px solid rgba(225,243,17,0.2)", borderRadius: 8, padding: "8px 10px", marginBottom: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 9 }}>BEST ROUTE</span>
-        <span style={{ color: "#DC2626", fontSize: 9, fontWeight: 700 }}>Uniswap → HOSHI DEX</span>
+        <span style={{ color: "#E1F311", fontSize: 9, fontWeight: 700 }}>Uniswap → HOSHI DEX</span>
       </div>
 
       {/* Button */}
-      <div style={{ background: "#DC2626", borderRadius: 10, padding: "11px", textAlign: "center", color: "#fff", fontWeight: 800, fontSize: 13 }}>
+      <div style={{ background: "#E1F311", borderRadius: 10, padding: "11px", textAlign: "center", color: "#fff", fontWeight: 800, fontSize: 13 }}>
         SWAP NOW
       </div>
     </div>
@@ -155,7 +155,7 @@ function ScreenTransfer() {
         {["Ethereum", "Solana", "BNB"].map((n, i) => (
           <div key={n} style={{
             flex: 1, textAlign: "center", padding: "6px 4px",
-            background: i === 0 ? "#DC2626" : "rgba(255,255,255,0.06)",
+            background: i === 0 ? "#E1F311" : "rgba(255,255,255,0.06)",
             borderRadius: 8, color: i === 0 ? "#fff" : "rgba(255,255,255,0.4)",
             fontSize: 9, fontWeight: 700,
           }}>{n}</div>
@@ -168,7 +168,7 @@ function ScreenTransfer() {
         <span style={{ color: "#fff", fontSize: 10 }}>~$1.20</span>
       </div>
 
-      <div style={{ background: "#DC2626", borderRadius: 10, padding: "11px", textAlign: "center", color: "#fff", fontWeight: 800, fontSize: 13 }}>
+      <div style={{ background: "#E1F311", borderRadius: 10, padding: "11px", textAlign: "center", color: "#fff", fontWeight: 800, fontSize: 13 }}>
         SEND NOW
       </div>
     </div>
@@ -190,7 +190,7 @@ function ScreenPredict() {
       ].map((item, i) => (
         <div key={i} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: "10px 11px", marginBottom: 8 }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-            <span style={{ color: "#DC2626", fontSize: 8, fontWeight: 800, letterSpacing: "0.15em" }}>{item.tag}</span>
+            <span style={{ color: "#E1F311", fontSize: 8, fontWeight: 800, letterSpacing: "0.15em" }}>{item.tag}</span>
             <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 8 }}>Pool: {item.pool}</span>
           </div>
           <div style={{ color: "#fff", fontSize: 11, fontWeight: 700, marginBottom: 7 }}>{item.event}</div>
@@ -241,7 +241,7 @@ function ScreenNews() {
       ].map((item, i) => (
         <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: 8, marginBottom: 8 }}>
           <div style={{ display: "flex", gap: 5, marginBottom: 4 }}>
-            <span style={{ background: i === 0 ? "rgba(34,197,94,0.2)" : "rgba(220,38,38,0.15)", color: i === 0 ? "#22C55E" : "#DC2626", fontSize: 7, fontWeight: 800, padding: "2px 5px", borderRadius: 3 }}>{item.tag}</span>
+            <span style={{ background: i === 0 ? "rgba(34,197,94,0.2)" : "rgba(225,243,17,0.15)", color: i === 0 ? "#22C55E" : "#E1F311", fontSize: 7, fontWeight: 800, padding: "2px 5px", borderRadius: 3 }}>{item.tag}</span>
             <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 8 }}>{item.time}</span>
           </div>
           <div style={{ color: "#fff", fontSize: 10, lineHeight: 1.4 }}>{item.headline}</div>
@@ -271,9 +271,9 @@ function ScreenAddToken() {
       <TokenRow symbol="OP" name="Optimism" price="$2.87" change="+5.7%" color="#FF0420" />
       <TokenRow symbol="INJ" name="Injective" price="$24.8" change="+8.3%" color="#00B2FF" />
 
-      <div style={{ marginTop: 6, background: "rgba(220,38,38,0.08)", border: "1px dashed rgba(220,38,38,0.3)", borderRadius: 8, padding: "8px 10px", textAlign: "center" }}>
+      <div style={{ marginTop: 6, background: "rgba(225,243,17,0.08)", border: "1px dashed rgba(225,243,17,0.3)", borderRadius: 8, padding: "8px 10px", textAlign: "center" }}>
         <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 9, marginBottom: 2 }}>OR PASTE CONTRACT ADDRESS</div>
-        <div style={{ color: "#DC2626", fontSize: 9, fontFamily: "monospace" }}>0x…</div>
+        <div style={{ color: "#E1F311", fontSize: 9, fontFamily: "monospace" }}>0x…</div>
       </div>
     </div>
   );
@@ -296,7 +296,7 @@ function ScreenPortfolio() {
 
       {/* Wallets */}
       {[
-        { name: "Main Wallet", addr: "0x742d…ab3f", balance: "$98,200", chains: 8, color: "#DC2626" },
+        { name: "Main Wallet", addr: "0x742d…ab3f", balance: "$98,200", chains: 8, color: "#E1F311" },
         { name: "DeFi Wallet", addr: "0x9f31…c77a", balance: "$24,050", chains: 5, color: "#627EEA" },
         { name: "Trading Wallet", addr: "0x1a4c…de82", balance: "$6,200",  chains: 3, color: "#22C55E" },
       ].map((w) => (

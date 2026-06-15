@@ -13,38 +13,38 @@ function IllustNonCustodial() {
   return (
     <div style={{ position: "relative", width: 320, height: 320, display: "flex", alignItems: "center", justifyContent: "center" }}>
       {/* Outer ring */}
-      <div style={{ position: "absolute", width: 300, height: 300, borderRadius: "50%", border: "1px solid rgba(220,38,38,0.15)" }} />
-      <div style={{ position: "absolute", width: 240, height: 240, borderRadius: "50%", border: "1px dashed rgba(220,38,38,0.1)" }} />
+      <div style={{ position: "absolute", width: 300, height: 300, borderRadius: "50%", border: "1px solid rgba(225,243,17,0.15)" }} />
+      <div style={{ position: "absolute", width: 240, height: 240, borderRadius: "50%", border: "1px dashed rgba(225,243,17,0.1)" }} />
 
       {/* Main key SVG */}
       <svg width="160" height="160" viewBox="0 0 160 160" fill="none" style={{ position: "relative", zIndex: 2 }}>
         {/* Key ring */}
-        <circle cx="60" cy="64" r="36" stroke="#DC2626" strokeWidth="10" fill="none" />
-        <circle cx="60" cy="64" r="18" fill="rgba(220,38,38,0.15)" stroke="rgba(220,38,38,0.4)" strokeWidth="2" />
-        <circle cx="60" cy="64" r="6" fill="#DC2626" />
+        <circle cx="60" cy="64" r="36" stroke="#E1F311" strokeWidth="10" fill="none" />
+        <circle cx="60" cy="64" r="18" fill="rgba(225,243,17,0.15)" stroke="rgba(225,243,17,0.4)" strokeWidth="2" />
+        <circle cx="60" cy="64" r="6" fill="#E1F311" />
         {/* Key shaft */}
-        <rect x="86" y="60" width="60" height="8" rx="4" fill="#DC2626" />
+        <rect x="86" y="60" width="60" height="8" rx="4" fill="#E1F311" />
         {/* Key teeth */}
-        <rect x="122" y="68" width="8" height="14" rx="3" fill="#DC2626" />
-        <rect x="108" y="68" width="8" height="10" rx="3" fill="#DC2626" />
-        <rect x="136" y="68" width="10" height="8" rx="3" fill="#DC2626" />
+        <rect x="122" y="68" width="8" height="14" rx="3" fill="#E1F311" />
+        <rect x="108" y="68" width="8" height="10" rx="3" fill="#E1F311" />
+        <rect x="136" y="68" width="10" height="8" rx="3" fill="#E1F311" />
       </svg>
 
       {/* "YOUR KEYS" badge */}
       <div style={{
         position: "absolute", top: 16, right: 8,
-        background: "rgba(220,38,38,0.12)", border: "1px solid rgba(220,38,38,0.3)",
+        background: "rgba(225,243,17,0.12)", border: "1px solid rgba(225,243,17,0.3)",
         borderRadius: 8, padding: "6px 12px",
-        color: "#DC2626", fontFamily: "'Bebas Neue', sans-serif",
+        color: "#E1F311", fontFamily: "'Bebas Neue', sans-serif",
         fontSize: 14, letterSpacing: "0.15em",
       }}>YOUR KEYS</div>
 
       {/* "YOUR RULES" badge */}
       <div style={{
         position: "absolute", bottom: 16, left: 8,
-        background: "rgba(220,38,38,0.12)", border: "1px solid rgba(220,38,38,0.3)",
+        background: "rgba(225,243,17,0.12)", border: "1px solid rgba(225,243,17,0.3)",
         borderRadius: 8, padding: "6px 12px",
-        color: "#DC2626", fontFamily: "'Bebas Neue', sans-serif",
+        color: "#E1F311", fontFamily: "'Bebas Neue', sans-serif",
         fontSize: 14, letterSpacing: "0.15em",
       }}>YOUR RULES</div>
 
@@ -56,8 +56,8 @@ function IllustNonCustodial() {
         <svg width="38" height="28" viewBox="0 0 38 28" fill="none">
           <path d="M8 22c-3.3 0-6-2.7-6-6 0-3 2.2-5.5 5.1-5.9C7.8 6.4 11.1 4 15 4c3.4 0 6.4 1.8 8.1 4.5.6-.2 1.2-.3 1.9-.3 3.3 0 6 2.7 6 6S28.3 20 25 20l-17 2z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5"/>
           {/* Cross */}
-          <line x1="4" y1="4" x2="34" y2="24" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round"/>
-          <line x1="34" y1="4" x2="4" y2="24" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round"/>
+          <line x1="4" y1="4" x2="34" y2="24" stroke="#E1F311" strokeWidth="2.5" strokeLinecap="round"/>
+          <line x1="34" y1="4" x2="4" y2="24" stroke="#E1F311" strokeWidth="2.5" strokeLinecap="round"/>
         </svg>
         <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 9, fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.12em" }}>NO CLOUD</span>
       </div>
@@ -95,9 +95,9 @@ function IllustEncryption() {
             left: col * 50 + (row % 2 === 0 ? 0 : 25) + 5,
             top: row * 44 + 20,
             width: 40, height: 46,
-            border: "1px solid rgba(220,38,38,0.08)",
+            border: "1px solid rgba(225,243,17,0.08)",
             clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-            background: i % 5 === 0 ? "rgba(220,38,38,0.06)" : "transparent",
+            background: i % 5 === 0 ? "rgba(225,243,17,0.06)" : "transparent",
           }} />
         );
       })}
@@ -105,19 +105,19 @@ function IllustEncryption() {
       {/* Central shield */}
       <div style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center" }}>
         <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
-          <path d="M50 4L8 20v36c0 26 18 48 42 56 24-8 42-30 42-56V20L50 4z" fill="rgba(220,38,38,0.12)" stroke="#DC2626" strokeWidth="2.5"/>
+          <path d="M50 4L8 20v36c0 26 18 48 42 56 24-8 42-30 42-56V20L50 4z" fill="rgba(225,243,17,0.12)" stroke="#E1F311" strokeWidth="2.5"/>
           {/* Lock body */}
-          <rect x="33" y="60" width="34" height="26" rx="5" fill="rgba(220,38,38,0.2)" stroke="#DC2626" strokeWidth="1.5"/>
+          <rect x="33" y="60" width="34" height="26" rx="5" fill="rgba(225,243,17,0.2)" stroke="#E1F311" strokeWidth="1.5"/>
           {/* Lock shackle */}
-          <path d="M38 60V50a12 12 0 0 1 24 0v10" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+          <path d="M38 60V50a12 12 0 0 1 24 0v10" stroke="#E1F311" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
           {/* Keyhole */}
-          <circle cx="50" cy="71" r="4" fill="#DC2626"/>
-          <rect x="48" y="72" width="4" height="8" rx="2" fill="#DC2626"/>
+          <circle cx="50" cy="71" r="4" fill="#E1F311"/>
+          <rect x="48" y="72" width="4" height="8" rx="2" fill="#E1F311"/>
         </svg>
 
         {/* AES badge */}
         <div style={{
-          background: "#DC2626", borderRadius: 6, padding: "4px 14px",
+          background: "#E1F311", borderRadius: 6, padding: "4px 14px",
           color: "#fff", fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 16, letterSpacing: "0.2em", marginTop: 6,
         }}>AES-256</div>
@@ -133,16 +133,16 @@ function IllustEncryption() {
         <div key={i} style={{
           position: "absolute", left: item.x, top: item.y,
           fontFamily: "monospace", fontSize: 10,
-          color: "rgba(220,38,38,0.3)", letterSpacing: "0.1em",
+          color: "rgba(225,243,17,0.3)", letterSpacing: "0.1em",
         }}>{item.text}</div>
       ))}
 
       {/* LOCAL ONLY badge */}
       <div style={{
         position: "absolute", top: 12, left: 10,
-        background: "rgba(220,38,38,0.1)", border: "1px solid rgba(220,38,38,0.2)",
+        background: "rgba(225,243,17,0.1)", border: "1px solid rgba(225,243,17,0.2)",
         borderRadius: 6, padding: "4px 10px",
-        color: "#DC2626", fontSize: 9, fontFamily: "'Bebas Neue', sans-serif",
+        color: "#E1F311", fontSize: 9, fontFamily: "'Bebas Neue', sans-serif",
         letterSpacing: "0.15em",
       }}>LOCAL ONLY</div>
     </div>
@@ -154,18 +154,18 @@ function IllustZeroKnowledge() {
     <div style={{ position: "relative", width: 320, height: 320, display: "flex", alignItems: "center", justifyContent: "center" }}>
       {/* Outer rings */}
       <div style={{ position: "absolute", width: 300, height: 300, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.05)" }} />
-      <div style={{ position: "absolute", width: 220, height: 220, borderRadius: "50%", border: "1px dashed rgba(220,38,38,0.1)" }} />
+      <div style={{ position: "absolute", width: 220, height: 220, borderRadius: "50%", border: "1px dashed rgba(225,243,17,0.1)" }} />
 
       {/* Eye with slash */}
       <svg width="180" height="100" viewBox="0 0 180 100" fill="none" style={{ position: "relative", zIndex: 2 }}>
         {/* Eye outline */}
         <path d="M10 50C10 50 45 10 90 10C135 10 170 50 170 50C170 50 135 90 90 90C45 90 10 50 10 50Z" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="rgba(255,255,255,0.03)"/>
         {/* Iris */}
-        <circle cx="90" cy="50" r="24" fill="rgba(220,38,38,0.1)" stroke="rgba(220,38,38,0.3)" strokeWidth="2"/>
+        <circle cx="90" cy="50" r="24" fill="rgba(225,243,17,0.1)" stroke="rgba(225,243,17,0.3)" strokeWidth="2"/>
         {/* Pupil */}
-        <circle cx="90" cy="50" r="10" fill="rgba(220,38,38,0.2)" />
+        <circle cx="90" cy="50" r="10" fill="rgba(225,243,17,0.2)" />
         {/* Big diagonal slash */}
-        <line x1="20" y1="8" x2="160" y2="92" stroke="#DC2626" strokeWidth="3.5" strokeLinecap="round"/>
+        <line x1="20" y1="8" x2="160" y2="92" stroke="#E1F311" strokeWidth="3.5" strokeLinecap="round"/>
       </svg>
 
       {/* "NOTHING STORED" */}
@@ -226,7 +226,7 @@ function IllustBiometric() {
             key={i}
             cx={cx} cy={cy}
             rx={r} ry={r * 1.18}
-            stroke={`rgba(220,38,38,${0.08 + i * 0.04})`}
+            stroke={`rgba(225,243,17,${0.08 + i * 0.04})`}
             strokeWidth="2.5"
             fill="none"
             strokeDasharray={i % 2 === 0 ? "none" : `${r * 0.4} ${r * 0.08}`}
@@ -234,10 +234,10 @@ function IllustBiometric() {
         ))}
 
         {/* Center dot */}
-        <circle cx={cx} cy={cy} r="6" fill="#DC2626" />
+        <circle cx={cx} cy={cy} r="6" fill="#E1F311" />
 
         {/* Vertical scan line */}
-        <line x1={cx} y1={cy - 145} x2={cx} y2={cy + 145} stroke="rgba(220,38,38,0.15)" strokeWidth="1" strokeDasharray="4 4"/>
+        <line x1={cx} y1={cy - 145} x2={cx} y2={cy + 145} stroke="rgba(225,243,17,0.15)" strokeWidth="1" strokeDasharray="4 4"/>
 
         {/* Corner scan brackets */}
         {[
@@ -248,19 +248,19 @@ function IllustBiometric() {
             <line
               x1={corner.x + (i % 2 === 0 ? 0 : 40)} y1={corner.y}
               x2={corner.x + (i % 2 === 0 ? 20 : 0)} y2={corner.y}
-              stroke="rgba(220,38,38,0.5)" strokeWidth="2.5" strokeLinecap="round"
+              stroke="rgba(225,243,17,0.5)" strokeWidth="2.5" strokeLinecap="round"
             />
             <line
               x1={corner.x + (i % 2 === 0 ? 0 : 40)} y1={corner.y}
               x2={corner.x + (i % 2 === 0 ? 0 : 40)} y2={corner.y + (i < 2 ? 20 : -20)}
-              stroke="rgba(220,38,38,0.5)" strokeWidth="2.5" strokeLinecap="round"
+              stroke="rgba(225,243,17,0.5)" strokeWidth="2.5" strokeLinecap="round"
             />
           </g>
         ))}
 
         {/* Horizontal animated scan bar */}
-        <rect x={cx - 140} y={cy - 8} width={240} height={16} rx="4" fill="rgba(220,38,38,0.07)" />
-        <rect x={cx - 140} y={cy - 1} width={240} height={2} rx="1" fill="rgba(220,38,38,0.5)" />
+        <rect x={cx - 140} y={cy - 8} width={240} height={16} rx="4" fill="rgba(225,243,17,0.07)" />
+        <rect x={cx - 140} y={cy - 1} width={240} height={2} rx="1" fill="rgba(225,243,17,0.5)" />
       </svg>
 
       {/* AUTHENTICATED badge */}
@@ -281,7 +281,7 @@ function IllustBiometric() {
         display: "flex", gap: 5, flexWrap: "wrap", width: 80, justifyContent: "center",
       }}>
         {Array.from({ length: 20 }).map((_, i) => (
-          <div key={i} style={{ width: 4, height: 4, borderRadius: "50%", background: "rgba(220,38,38,0.3)" }} />
+          <div key={i} style={{ width: 4, height: 4, borderRadius: "50%", background: "rgba(225,243,17,0.3)" }} />
         ))}
       </div>
     </div>
@@ -300,7 +300,7 @@ const PANELS = [
     sub: "FULL OWNERSHIP",
     desc: "Your private keys, your rules. No server ever touches your seed phrase. Full sovereignty, zero compromise.",
     bg: "#0a0a0a",
-    accent: "#DC2626",
+    accent: "#E1F311",
   },
   {
     num: "02",
@@ -308,7 +308,7 @@ const PANELS = [
     sub: "AES-256 LOCAL",
     desc: "Private keys encrypted with AES-256 and stored locally on your device. No cloud, no server, no third-party access — ever.",
     bg: "#110606",
-    accent: "#DC2626",
+    accent: "#E1F311",
   },
   {
     num: "03",
@@ -316,7 +316,7 @@ const PANELS = [
     sub: "TOTAL PRIVACY",
     desc: "We don't know your name, your balance, or what you do. By design, not by accident.",
     bg: "#0a0a0a",
-    accent: "#DC2626",
+    accent: "#E1F311",
   },
   {
     num: "04",

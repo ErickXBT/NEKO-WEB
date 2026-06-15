@@ -26,7 +26,7 @@ export default function NotifyMe() {
           style={{
             fontSize: "clamp(3rem, 10vw, 8rem)",
             animation: "marquee-right 18s linear infinite",
-            WebkitTextStroke: "2px #DC2626",
+            WebkitTextStroke: "2px #E1F311",
             color: "transparent",
           }}
         >
@@ -55,7 +55,7 @@ export default function NotifyMe() {
           />
           <button
             type="submit"
-            className="bg-primary hover:bg-red-700 text-white w-12 h-12 flex items-center justify-center rounded-full m-1 transition-colors flex-shrink-0"
+            className="bg-primary hover:bg-[#c8d90f] text-foreground w-12 h-12 flex items-center justify-center rounded-full m-1 transition-colors flex-shrink-0"
             data-testid="btn-notify-submit"
           >
             <ArrowRight className="w-5 h-5" />

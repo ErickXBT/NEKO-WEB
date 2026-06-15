@@ -38,7 +38,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center">
           <button
-            className="bg-primary hover:bg-red-700 text-white font-bold px-6 py-2.5 rounded-full flex items-center gap-2 transition-all"
+            className="bg-primary hover:bg-[#c8d90f] text-foreground font-bold px-6 py-2.5 rounded-full flex items-center gap-2 transition-all"
             data-testid="btn-download"
           >
             DOWNLOAD <ArrowRight className="w-4 h-4" />

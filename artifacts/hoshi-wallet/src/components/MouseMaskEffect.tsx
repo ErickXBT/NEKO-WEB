@@ -107,7 +107,7 @@ export default function MouseMaskEffect() {
         top: 0,
         left: 0,
         borderRadius: "50%",
-        background: "#DC2626",
+        background: "#E1F311",
         /* difference blend: black→red, red→black */
         mixBlendMode: "difference",
         pointerEvents: "none",

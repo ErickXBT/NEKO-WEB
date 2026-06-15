@@ -67,7 +67,7 @@ function HoshiCard({ variant, width = 380 }: CardProps) {
   };
 
   const accentColors: Record<string, string> = {
-    main: "#DC2626",
+    main: "#E1F311",
     anime: "#8B5CF6",
     meme: "#22C55E",
   };
@@ -130,8 +130,8 @@ function HoshiCard({ variant, width = 380 }: CardProps) {
         <div style={{
           position: "absolute", inset: 0, zIndex: 0,
           backgroundImage: `
-            radial-gradient(circle at 85% 15%, rgba(220,38,38,0.12) 0%, transparent 55%),
-            radial-gradient(circle at 15% 85%, rgba(220,38,38,0.08) 0%, transparent 50%)
+            radial-gradient(circle at 85% 15%, rgba(225,243,17,0.12) 0%, transparent 55%),
+            radial-gradient(circle at 15% 85%, rgba(225,243,17,0.08) 0%, transparent 50%)
           `,
         }} />
       )}
@@ -159,7 +159,7 @@ function HoshiCard({ variant, width = 380 }: CardProps) {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
           {variant === "main" && (
             <span style={{
-              background: "#DC2626", color: "#fff",
+              background: "#E1F311", color: "#fff",
               fontSize: 9, fontWeight: 800,
               padding: "3px 8px", borderRadius: 4,
               letterSpacing: "0.15em",
@@ -286,7 +286,7 @@ export default function ColdCard() {
           </span>
           <h2 className="text-6xl md:text-[clamp(56px,8vw,110px)] font-['Bebas_Neue'] text-foreground leading-[0.88]">
             NEKO WALLET<br/>
-            <span style={{ color: "#DC2626" }}>/</span> NEKO CARD
+            <span style={{ color: "#E1F311" }}>/</span> NEKO CARD
           </h2>
         </div>
 
