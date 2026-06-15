@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
 
           {/* LEFT — text */}
-          <div className="hero-left flex flex-col items-start gap-6 lg:max-w-[50%]">
+          <div className="hero-left flex flex-col items-start gap-6 lg:max-w-[44%]">
 
             {/* Badge */}
             <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-primary border border-primary/30 bg-primary/5 px-4 py-2 rounded-full">
@@ -58,12 +58,15 @@ export default function Hero() {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-3 mt-2">
-              <button
+              <a
+                href="https://nekoapp.fun/"
+                target="_blank"
+                rel="noopener noreferrer"
                 data-testid="btn-create-wallet"
                 className="px-8 py-4 rounded-full bg-primary text-[#0a0a0a] font-bold text-base hover:bg-[#c8d90f] transition-colors"
               >
                 CREATE WALLET
-              </button>
+              </a>
             </div>
 
             {/* Stats row */}
@@ -83,7 +86,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT — combined mockup image */}
-          <div className="hero-mockup flex-shrink-0 flex items-center justify-center lg:max-w-[52%] w-full">
+          <div className="hero-mockup flex-shrink-0 flex items-center justify-center lg:max-w-[62%] w-full">
             <div className="relative w-full">
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -91,7 +94,7 @@ export default function Hero() {
               <img
                 src={mockupImg}
                 alt="NEKO Wallet App Mockup"
-                className="relative w-full max-w-2xl mx-auto object-contain drop-shadow-2xl select-none"
+                className="relative w-full max-w-[874px] mx-auto object-contain drop-shadow-2xl select-none"
                 draggable={false}
               />
             </div>
