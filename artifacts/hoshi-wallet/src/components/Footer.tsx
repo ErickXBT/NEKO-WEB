@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { SiX, SiTelegram, SiDiscord, SiInstagram } from "react-icons/si";
-import hoshiLogoPath from "@assets/hoshi-logo.png";
+import hoshiLogoPath from "@assets/LOGO_1781531503433.jpg";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -21,8 +21,8 @@ export default function Footer() {
               DeFi District,<br />
               Web3 Republic
             </address>
-            <a href="mailto:support@hoshiswap.com" className="text-sm text-neutral-300 font-semibold underline underline-offset-2 hover:text-primary transition-colors">
-              support@hoshiswap.com
+            <a href="mailto:support@nekowallet.com" className="text-sm text-neutral-300 font-semibold underline underline-offset-2 hover:text-primary transition-colors">
+              support@nekowallet.com
             </a>
           </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
               <li><a href="#" className="hover:text-primary transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-              <li><a href="mailto:support@hoshiswap.com" className="hover:text-primary transition-colors">support@hoshiswap.com</a></li>
+              <li><a href="mailto:support@nekowallet.com" className="hover:text-primary transition-colors">support@nekowallet.com</a></li>
             </ul>
           </div>
 
@@ -75,14 +75,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Big HOSHI SWAP wordmark */}
+      {/* Big NEKO WALLET wordmark */}
       <div className="relative overflow-hidden border-t border-neutral-800">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl flex items-end justify-between py-6">
           <h2
             className="font-['Bebas_Neue'] text-white leading-none select-none whitespace-nowrap"
             style={{ fontSize: "clamp(3.5rem, 12vw, 10rem)" }}
           >
-            // HOSHI SWAP
+            // NEKO WALLET
           </h2>
 
           <div className="flex flex-col items-end gap-4 pb-2 flex-shrink-0 ml-8">
@@ -104,7 +104,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-neutral-600 text-xs text-right">
-              © 2026 HOSHI Swap. Powered by Web3.
+              © 2026 NEKO Wallet. Powered by Web3.
             </p>
           </div>
         </div>

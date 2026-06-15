@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import hoshiLogo from "@assets/hoshi-logo.png";
+import hoshiLogo from "@assets/LOGO_1781531503433.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -205,7 +205,7 @@ function HoshiCard({ variant, width = 380 }: CardProps) {
             </span>
           </p>
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 9, letterSpacing: "0.2em", marginTop: 6, fontFamily: "'Bebas Neue', sans-serif" }}>
-            {variant === "main" ? "HOSHI SWAP / COLDCARD" : variant === "anime" ? "LIMITED EDITION — 2025" : "MEME LORDS ONLY — 2025"}
+            {variant === "main" ? "NEKO WALLET / COLDCARD" : variant === "anime" ? "LIMITED EDITION — 2025" : "MEME LORDS ONLY — 2025"}
           </p>
         </div>
         <MastercardSVG size={52} />
@@ -285,8 +285,8 @@ export default function ColdCard() {
             IN DEVELOPMENT
           </span>
           <h2 className="text-6xl md:text-[clamp(56px,8vw,110px)] font-['Bebas_Neue'] text-foreground leading-[0.88]">
-            HOSHI SWAP<br/>
-            <span style={{ color: "#DC2626" }}>/</span> HOSHI CARD
+            NEKO WALLET<br/>
+            <span style={{ color: "#DC2626" }}>/</span> NEKO CARD
           </h2>
         </div>
 

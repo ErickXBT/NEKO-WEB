@@ -1,4 +1,4 @@
-import hoshiLogo from "@assets/hoshi-logo.png";
+import hoshiLogo from "@assets/LOGO_1781531503433.jpg";
 
 /* ─────────────────────────────────────────────
    Shared micro-components

@@ -7,7 +7,7 @@ export default function Download() {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-6xl md:text-8xl font-['Bebas_Neue'] mb-6">GET STARTED WITH HOSHI SWAP</h2>
+        <h2 className="text-6xl md:text-8xl font-['Bebas_Neue'] mb-6">GET STARTED WITH NEKO WALLET</h2>
         <p className="text-xl font-medium mb-12 max-w-2xl mx-auto opacity-90">
           The ultimate self-custodial wallet for serious DeFi users. Download now and take control of your assets.
         </p>

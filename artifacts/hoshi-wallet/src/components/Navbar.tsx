@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import hoshiLogoPath from "@assets/hoshi-logo.png";
+import hoshiLogoPath from "@assets/LOGO_1781531503433.jpg";
 import { Link } from "wouter";
 
 export default function Navbar() {
@@ -24,8 +24,8 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-50">
-          <img src={hoshiLogoPath} alt="HOSHI Swap" className="h-8 w-auto" />
-          <span className="font-['Bebas_Neue'] text-2xl tracking-wider text-foreground">HOSHI SWAP</span>
+          <img src={hoshiLogoPath} alt="NEKO Wallet" className="h-8 w-auto" />
+          <span className="font-['Bebas_Neue'] text-2xl tracking-wider text-foreground">NEKO WALLET</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {mobileMenuOpen && (
           <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 pt-16">
-            <img src={hoshiLogoPath} alt="HOSHI Swap" className="h-12 w-auto mb-4" />
+            <img src={hoshiLogoPath} alt="NEKO Wallet" className="h-12 w-auto mb-4" />
             <Link href="#home" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">HOME</Link>
             <Link href="#security" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">SECURITY</Link>
             <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-['Bebas_Neue']">FEATURES</Link>

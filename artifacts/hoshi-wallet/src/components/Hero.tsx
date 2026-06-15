@@ -102,7 +102,7 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl scale-110 pointer-events-none" />
               <img
                 src={hoshiLogoPath}
-                alt="HOSHI Swap Logo"
+                alt="NEKO Wallet Logo"
                 className="relative w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[630px] lg:h-[630px] object-contain drop-shadow-2xl select-none"
                 draggable={false}
               />

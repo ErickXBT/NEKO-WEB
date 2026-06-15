@@ -12,7 +12,7 @@ const FEATURES = [
 ];
 
 const WALLETS = [
-  { name: "HOSHI Swap", cols: [true, true, true, true, true, true, true, true, true, true] },
+  { name: "NEKO WALLET", cols: [true, true, true, true, true, true, true, true, true, true] },
   { name: "Trust Wallet", cols: [true, true, false, false, false, true, false, false, true, true] },
   { name: "Best Wallet", cols: [false, false, false, false, true, true, false, false, true, false] },
   { name: "Coinbase Wallet", cols: [true, false, false, false, false, true, false, false, true, true] },
