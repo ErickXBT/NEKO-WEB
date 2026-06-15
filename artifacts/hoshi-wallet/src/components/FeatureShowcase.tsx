@@ -16,14 +16,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* Odd index (0,2,4,6) = white  |  Even index (1,3,5,7) = red */
 const PANELS = [
-  { num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",    desc: "Thousands of tokens, dozens of chains. NEKO Wallet finds the best rate for you — no need to open a DEX or browser.",       scheme: "light" },
-  { num: "02", tag: "ASSETS",         title: "1000+ TOKENS & COINS",               desc: "Bitcoin, Ethereum, Solana, and thousands more across 50+ blockchains. All in one wallet.",                                  scheme: "dark"  },
-  { num: "03", tag: "TRANSFER",       title: "TRANSFER CRYPTO INSTANTLY",          desc: "Send and receive tokens across 50+ blockchains. Paste address or scan QR — it takes seconds, not minutes.",                scheme: "light" },
-  { num: "04", tag: "PREDICTION",     title: "PREDICT REAL-WORLD EVENTS",          desc: "Elections, sports, culture — place predictions directly from the app. Live odds, fast payouts.",                           scheme: "dark"  },
-  { num: "05", tag: "INTELLIGENCE",   title: "NEWS & SECTOR ANALYSIS BUILT-IN",    desc: "Real-time crypto news, sector money flow, fear & greed index — all the data you need, right inside the app.",             scheme: "light" },
-  { num: "06", tag: "CUSTOMIZE",      title: "ADD ANY TOKEN YOU WANT",             desc: "Search from thousands of tokens or add custom ones by contract address. Your wallet, your tokens — no restrictions.",      scheme: "dark"  },
-  { num: "07", tag: "PORTFOLIO",      title: "ALL WALLETS, ONE SCREEN",            desc: "Every chain, every wallet, every token — visible in one place. Live balance updates. Share your portfolio with friends.",  scheme: "light" },
-  { num: "08", tag: "DISCOVERY",      title: "DISCOVER TOKENS BEFORE THEY TREND", desc: "Our recommendation engine filters tokens using real market data — not just hype. One tap adds it to your wallet.",          scheme: "dark"  },
+  { num: "01", tag: "SWAP",          title: "SWAP TOKENS DIRECTLY IN THE APP",       desc: "Swap SOL, USDC, and thousands more — best-rate routing via Jupiter, right inside the app. Zero extra fees, no browser needed.",          scheme: "light" },
+  { num: "02", tag: "WALLET",        title: "MANAGE ALL YOUR ASSETS IN ONE PLACE",   desc: "Your full portfolio at a glance — BTC, ETH, USDT and more. Send, receive, swap, or buy crypto with just one tap.",                       scheme: "dark"  },
+  { num: "03", tag: "ONBOARDING",    title: "GET STARTED IN SECONDS",                desc: "Connect an existing wallet, create a brand new one, or import via seed phrase. NEKO makes setup fast, simple, and secure.",               scheme: "light" },
+  { num: "04", tag: "TRADING",       title: "DISCOVER & TRADE TRENDING TOKENS",      desc: "Live DexScreener data built right in — spot trending tokens across Solana, Ethereum, and more before they pump.",                        scheme: "dark"  },
+  { num: "05", tag: "INTELLIGENCE",  title: "STAY AHEAD WITH BUILT-IN CRYPTO NEWS",  desc: "Live news from CoinDesk, Cointelegraph, Decrypt, The Block & Bitcoin Magazine — all aggregated and auto-refreshed every 5 minutes.",     scheme: "light" },
+  { num: "06", tag: "MARKETS",       title: "TOP 100 COINS BY MARKET CAP",           desc: "Bitcoin, Ethereum, Solana and every major coin tracked in real time. Price, 24h change, and market cap — all on one screen.",             scheme: "dark"  },
+  { num: "07", tag: "NEKO CARD",     title: "SPEND CRYPTO ANYWHERE IN THE WORLD",    desc: "The NEKO Crypto Mastercard — accepted in 200+ countries and 150M+ merchants. Instant fiat-to-crypto top-up, zero FX fees.",              scheme: "light" },
+  { num: "08", tag: "DISCOVERY",     title: "FIND TOKENS BEFORE THEY TREND",         desc: "NEKO tracks on-chain signals and DexScreener data to surface tokens worth watching — before the rest of the market catches on.",          scheme: "dark"  },
 ] as const;
 
 const TOTAL = PANELS.length;
