@@ -2,7 +2,15 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import phoneMockupImg from "@assets/Gemini_Generated_Image_3z6ldj3z6ldj3z6l-Photoroom_1781535529901.png";
+import phone01 from "@assets/Gemini_Generated_Image_3z6ldj3z6ldj3z6l-Photoroom_1781535529901.png";
+import phone02 from "@assets/Gemini_Generated_Image_16vtp616vtp616vt-Photoroom_1781535843568.png";
+import phone03 from "@assets/Gemini_Generated_Image_15w19215w19215w1-Photoroom_1781535843570.png";
+import phone04 from "@assets/Gemini_Generated_Image_xhx69pxhx69pxhx6-Photoroom_1781535843569.png";
+import phone05 from "@assets/Gemini_Generated_Image_6z57176z57176z57-Photoroom_1781535843570.png";
+import phone06 from "@assets/Gemini_Generated_Image_vz5t24vz5t24vz5t-Photoroom_1781535843569.png";
+import phone07 from "@assets/Gemini_Generated_Image_c6h62qc6h62qc6h6-Photoroom_1781535843570.png";
+
+const PHONE_IMAGES = [phone01, phone02, phone03, phone04, phone05, phone06, phone07, phone04];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -221,7 +229,7 @@ export default function FeatureShowcase() {
                   }} />
                   <div style={{ position: "relative", zIndex: 1 }}>
                     <img
-                      src={phoneMockupImg}
+                      src={PHONE_IMAGES[i]}
                       alt="NEKO Wallet App"
                       style={{
                         height: Math.min(Math.round(window.innerHeight * 0.72), 520),
