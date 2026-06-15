@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import PhoneMockup from "@/components/PhoneMockup";
+import phoneMockupImg from "@assets/Gemini_Generated_Image_3z6ldj3z6ldj3z6l-Photoroom_1781535529901.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -220,10 +220,15 @@ export default function FeatureShowcase() {
                     pointerEvents: "none",
                   }} />
                   <div style={{ position: "relative", zIndex: 1 }}>
-                    <PhoneMockup
-                      screenIndex={i}
-                      height={Math.min(Math.round(window.innerHeight * 0.72), 520)}
-                      scheme={panel.scheme}
+                    <img
+                      src={phoneMockupImg}
+                      alt="NEKO Wallet App"
+                      style={{
+                        height: Math.min(Math.round(window.innerHeight * 0.72), 520),
+                        width: "auto",
+                        objectFit: "contain",
+                        display: "block",
+                      }}
                     />
                   </div>
                 </div>
