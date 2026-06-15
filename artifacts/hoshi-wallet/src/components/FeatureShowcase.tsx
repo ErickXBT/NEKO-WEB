@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* Odd index (0,2,4,6) = white  |  Even index (1,3,5,7) = red */
 const PANELS = [
-  { num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",    desc: "Thousands of tokens, dozens of chains. HOSHI Wallet finds the best rate for you — no need to open a DEX or browser.",       scheme: "light" },
+  { num: "01", tag: "CORE FEATURE",  title: "SWAP TOKENS DIRECTLY IN THE APP",    desc: "Thousands of tokens, dozens of chains. NEKO Wallet finds the best rate for you — no need to open a DEX or browser.",       scheme: "light" },
   { num: "02", tag: "ASSETS",         title: "1000+ TOKENS & COINS",               desc: "Bitcoin, Ethereum, Solana, and thousands more across 50+ blockchains. All in one wallet.",                                  scheme: "dark"  },
   { num: "03", tag: "TRANSFER",       title: "TRANSFER CRYPTO INSTANTLY",          desc: "Send and receive tokens across 50+ blockchains. Paste address or scan QR — it takes seconds, not minutes.",                scheme: "light" },
   { num: "04", tag: "PREDICTION",     title: "PREDICT REAL-WORLD EVENTS",          desc: "Elections, sports, culture — place predictions directly from the app. Live odds, fast payouts.",                           scheme: "dark"  },

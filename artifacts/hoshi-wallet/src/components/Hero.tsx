@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import hoshiLogoPath from "@assets/LOGO_HOSHI_SWAP_1780626293131.png";
+import nekoLogoPath from "@assets/LOGO_1781531503433.jpg";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -101,7 +101,7 @@ export default function Hero() {
               {/* Glow ring behind logo */}
               <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl scale-110 pointer-events-none" />
               <img
-                src={hoshiLogoPath}
+                src={nekoLogoPath}
                 alt="NEKO Wallet Logo"
                 className="relative w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[630px] lg:h-[630px] object-contain drop-shadow-2xl select-none"
                 draggable={false}

@@ -7,12 +7,12 @@ import {
 
 const FAQS = [
   {
-    q: "Is HOSHI Wallet non-custodial?",
+    q: "Is NEKO Wallet non-custodial?",
     a: "Yes, users maintain full control over their private keys. We never have access to your funds or seed phrase."
   },
   {
     q: "Which chains are supported?",
-    a: "HOSHI Wallet supports 50+ major blockchains including Ethereum, Solana, BNB Chain, Polygon, Arbitrum, Base, and many more."
+    a: "NEKO Wallet supports 50+ major blockchains including Ethereum, Solana, BNB Chain, Polygon, Arbitrum, Base, and many more."
   },
   {
     q: "How does the Prediction Market work?",
@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Can I buy crypto with fiat?",
-    a: "Yes, HOSHI Wallet includes built-in on-ramp and off-ramp support so you can purchase crypto directly with a credit card or bank transfer."
+    a: "Yes, NEKO Wallet includes built-in on-ramp and off-ramp support so you can purchase crypto directly with a credit card or bank transfer."
   },
   {
     q: "Is hardware wallet support available?",

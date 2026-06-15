@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { SiX, SiTelegram, SiDiscord, SiInstagram } from "react-icons/si";
-import hoshiLogoPath from "@assets/LOGO_1781531503433.jpg";
+import nekoLogoPath from "@assets/LOGO_1781531503433.jpg";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -35,7 +35,7 @@ export default function Footer() {
               <li><a href="#" className="hover:text-primary transition-colors">Chrome Extension</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Airdrop</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Whitepaper</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">$HOSHI Roadmap</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">$NEKO Roadmap</a></li>
             </ul>
           </div>
 

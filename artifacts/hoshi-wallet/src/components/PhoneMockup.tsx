@@ -1,4 +1,4 @@
-import hoshiLogo from "@assets/LOGO_1781531503433.jpg";
+import nekoLogo from "@assets/LOGO_1781531503433.jpg";
 
 /* ─────────────────────────────────────────────
    Shared micro-components
@@ -43,7 +43,7 @@ function ScreenHeader({ title, sub }: { title: string; sub?: string }) {
     <div style={{ marginBottom: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span style={{ color: "#fff", fontSize: 15, fontWeight: 700 }}>{title}</span>
-        <img src={hoshiLogo} alt="H" style={{ width: 20, height: 20, filter: "brightness(0) invert(1)", opacity: 0.7 }} />
+        <img src={nekoLogo} alt="N" style={{ width: 20, height: 20, filter: "brightness(0) invert(1)", opacity: 0.7 }} />
       </div>
       {sub && <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 10, marginTop: 2 }}>{sub}</p>}
     </div>
@@ -94,7 +94,7 @@ function ScreenSwap() {
       {/* Route */}
       <div style={{ background: "rgba(225,243,17,0.12)", border: "1px solid rgba(225,243,17,0.2)", borderRadius: 8, padding: "8px 10px", marginBottom: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 9 }}>BEST ROUTE</span>
-        <span style={{ color: "#E1F311", fontSize: 9, fontWeight: 700 }}>Uniswap → HOSHI DEX</span>
+        <span style={{ color: "#E1F311", fontSize: 9, fontWeight: 700 }}>Uniswap → NEKO DEX</span>
       </div>
 
       {/* Button */}
@@ -351,7 +351,7 @@ function ScreenDiscovery() {
                 <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 9 }}>{token.price}</span>
               </div>
             </div>
-            {/* HOSHI score */}
+            {/* NEKO score */}
             <div style={{ textAlign: "center", flexShrink: 0 }}>
               <div style={{ color: token.color, fontSize: 13, fontWeight: 800 }}>{token.score}</div>
               <div style={{ color: "rgba(255,255,255,0.3)", fontSize: 7 }}>SCORE</div>

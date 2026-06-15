@@ -235,12 +235,12 @@ export default function ColdCard() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.from(".hoshi-card-title", {
+    gsap.from(".neko-card-title", {
       scrollTrigger: { trigger: containerRef.current, start: "top 75%" },
       y: 60, opacity: 0, duration: 0.9, ease: "power3.out",
     });
 
-    gsap.from(".hoshi-card-desc", {
+    gsap.from(".neko-card-desc", {
       scrollTrigger: { trigger: containerRef.current, start: "top 65%" },
       y: 40, opacity: 0, duration: 0.8, delay: 0.3, ease: "power2.out",
     });
@@ -292,7 +292,7 @@ export default function ColdCard() {
 
       <div className="container mx-auto px-4 text-center relative z-10">
 
-        <div className="hoshi-card-title mb-4">
+        <div className="neko-card-title mb-4">
           <span className="bg-primary text-foreground text-[10px] font-bold px-3 py-1 rounded uppercase tracking-widest inline-block mb-5">
             IN DEVELOPMENT
           </span>
@@ -342,11 +342,11 @@ export default function ColdCard() {
           </div>
         </div>
 
-        <p className="hoshi-card-desc mt-20 text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed">
+        <p className="neko-card-desc mt-20 text-lg md:text-xl text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed">
           A physical Visa/Mastercard linked directly to your NEKO Wallet — spend crypto anywhere, pay in any currency, with collectible limited-edition designs.
         </p>
 
-        <div className="hoshi-card-desc flex flex-wrap justify-center gap-3 mt-8">
+        <div className="neko-card-desc flex flex-wrap justify-center gap-3 mt-8">
           {["NFC TAP TO PAY", "50+ BLOCKCHAINS", "VISA / MASTERCARD", "LIMITED EDITIONS", "NON-CUSTODIAL"].map((feat) => (
             <span
               key={feat}
