@@ -3,7 +3,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import walletImg from "@assets/Gemini_Generated_Image_16vtp616vtp616vt-Photoroom_1781552629878.png";
 import cardImg from "@assets/Gemini_Generated_Image_c6h62qc6h62qc6h6-Photoroom_1781552629878.png";
-import connectImg from "@assets/Gemini_Generated_Image_15w19215w19215w1-Photoroom_1781535843570.png";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,9 +10,8 @@ export default function Hero() {
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
     tl.from(".hero-center > *", { y: 40, opacity: 0, duration: 0.8, stagger: 0.12 })
-      .from(".hero-phone-left", { x: -80, opacity: 0, duration: 1, rotate: -20 }, "-=0.6")
-      .from(".hero-phone-right", { x: 80, opacity: 0, duration: 1, rotate: 20 }, "-=0.9")
-      .from(".hero-phone-bottom", { y: 100, opacity: 0, duration: 1 }, "-=0.8");
+      .from(".hero-phone-left", { x: -80, duration: 1, rotate: 0 }, "-=0.6")
+      .from(".hero-phone-right", { x: 80, duration: 1, rotate: 0 }, "-=0.9");
   }, { scope: containerRef });
 
   return (
@@ -36,28 +34,24 @@ export default function Hero() {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* LEFT phone */}
-      <img
-        src={walletImg}
-        alt="NEKO Wallet balance screen"
-        className="hero-phone-left hidden lg:block absolute left-[3%] xl:left-[7%] top-1/2 -translate-y-1/2 w-[230px] xl:w-[280px] rotate-[-12deg] drop-shadow-2xl select-none pointer-events-none z-0"
-        draggable={false}
-      />
+      <div className="hidden lg:block absolute left-[3%] xl:left-[7%] top-1/2 -translate-y-1/2 rotate-[12deg] z-0 pointer-events-none">
+        <img
+          src={walletImg}
+          alt="NEKO Wallet balance screen"
+          className="hero-phone-left w-[230px] xl:w-[280px] drop-shadow-2xl select-none"
+          draggable={false}
+        />
+      </div>
 
       {/* RIGHT phone */}
-      <img
-        src={cardImg}
-        alt="NEKO crypto Mastercard"
-        className="hero-phone-right hidden lg:block absolute right-[3%] xl:right-[7%] top-1/2 -translate-y-1/2 w-[230px] xl:w-[280px] rotate-[12deg] drop-shadow-2xl select-none pointer-events-none z-0"
-        draggable={false}
-      />
-
-      {/* BOTTOM-CENTER phone */}
-      <img
-        src={connectImg}
-        alt="NEKO Wallet connect screen"
-        className="hero-phone-bottom hidden lg:block absolute left-1/2 -translate-x-1/2 bottom-[-26%] w-[250px] xl:w-[300px] rotate-[-3deg] drop-shadow-2xl select-none pointer-events-none z-0"
-        draggable={false}
-      />
+      <div className="hidden lg:block absolute right-[3%] xl:right-[7%] top-1/2 -translate-y-1/2 rotate-[-12deg] z-0 pointer-events-none">
+        <img
+          src={cardImg}
+          alt="NEKO crypto Mastercard"
+          className="hero-phone-right w-[230px] xl:w-[280px] drop-shadow-2xl select-none"
+          draggable={false}
+        />
+      </div>
 
       {/* CENTER content */}
       <div className="hero-center relative z-10 flex flex-col items-center text-center gap-6 px-6 max-w-2xl mx-auto pt-24 pb-12">
